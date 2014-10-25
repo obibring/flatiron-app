@@ -14,6 +14,10 @@
 		A31A079219FC023700017DA9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A31A079119FC023700017DA9 /* Images.xcassets */; };
 		A31A079519FC023700017DA9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A31A079319FC023700017DA9 /* LaunchScreen.xib */; };
 		A31A07A119FC023700017DA9 /* Flatiron_AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A31A07A019FC023700017DA9 /* Flatiron_AppTests.m */; };
+		A31A07AC19FC090100017DA9 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A31A07AB19FC090100017DA9 /* ProfileViewController.m */; };
+		A31A07B019FC0A1200017DA9 /* EveryoneTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A31A07AF19FC0A1200017DA9 /* EveryoneTableTableViewController.m */; };
+		A31A07B319FC0DE800017DA9 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A31A07B219FC0DE800017DA9 /* CalendarViewController.m */; };
+		A31A07B619FC0EB300017DA9 /* AlertsTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A31A07B519FC0EB300017DA9 /* AlertsTableTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +44,14 @@
 		A31A079A19FC023700017DA9 /* Flatiron-AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Flatiron-AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A31A079F19FC023700017DA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A31A07A019FC023700017DA9 /* Flatiron_AppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Flatiron_AppTests.m; sourceTree = "<group>"; };
+		A31A07AA19FC090100017DA9 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		A31A07AB19FC090100017DA9 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		A31A07AE19FC0A1200017DA9 /* EveryoneTableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EveryoneTableTableViewController.h; sourceTree = "<group>"; };
+		A31A07AF19FC0A1200017DA9 /* EveryoneTableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EveryoneTableTableViewController.m; sourceTree = "<group>"; };
+		A31A07B119FC0DE800017DA9 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
+		A31A07B219FC0DE800017DA9 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
+		A31A07B419FC0EB300017DA9 /* AlertsTableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertsTableTableViewController.h; sourceTree = "<group>"; };
+		A31A07B519FC0EB300017DA9 /* AlertsTableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertsTableTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +98,7 @@
 				A31A078B19FC023700017DA9 /* ViewController.h */,
 				A31A078C19FC023700017DA9 /* ViewController.m */,
 				A31A078E19FC023700017DA9 /* Main.storyboard */,
+				A31A07AD19FC090D00017DA9 /* View Controllers */,
 				A31A079119FC023700017DA9 /* Images.xcassets */,
 				A31A079319FC023700017DA9 /* LaunchScreen.xib */,
 				A31A078419FC023700017DA9 /* Supporting Files */,
@@ -117,6 +130,21 @@
 				A31A079F19FC023700017DA9 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A31A07AD19FC090D00017DA9 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A31A07AA19FC090100017DA9 /* ProfileViewController.h */,
+				A31A07B119FC0DE800017DA9 /* CalendarViewController.h */,
+				A31A07B219FC0DE800017DA9 /* CalendarViewController.m */,
+				A31A07B419FC0EB300017DA9 /* AlertsTableTableViewController.h */,
+				A31A07B519FC0EB300017DA9 /* AlertsTableTableViewController.m */,
+				A31A07AB19FC090100017DA9 /* ProfileViewController.m */,
+				A31A07AE19FC0A1200017DA9 /* EveryoneTableTableViewController.h */,
+				A31A07AF19FC0A1200017DA9 /* EveryoneTableTableViewController.m */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,7 +249,11 @@
 			files = (
 				A31A078D19FC023700017DA9 /* ViewController.m in Sources */,
 				A31A078A19FC023700017DA9 /* AppDelegate.m in Sources */,
+				A31A07AC19FC090100017DA9 /* ProfileViewController.m in Sources */,
 				A31A078719FC023700017DA9 /* main.m in Sources */,
+				A31A07B319FC0DE800017DA9 /* CalendarViewController.m in Sources */,
+				A31A07B619FC0EB300017DA9 /* AlertsTableTableViewController.m in Sources */,
+				A31A07B019FC0A1200017DA9 /* EveryoneTableTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
