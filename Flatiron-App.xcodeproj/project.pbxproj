@@ -17,6 +17,10 @@
 		A31A07B019FC0A1200017DA9 /* EveryoneTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A31A07AF19FC0A1200017DA9 /* EveryoneTableTableViewController.m */; };
 		A31A07B319FC0DE800017DA9 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A31A07B219FC0DE800017DA9 /* CalendarViewController.m */; };
 		A31A07B619FC0EB300017DA9 /* AlertsTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A31A07B519FC0EB300017DA9 /* AlertsTableTableViewController.m */; };
+		A3A5A42819FC617B00FF9FA4 /* DateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A3A5A41F19FC617B00FF9FA4 /* DateUtil.m */; };
+		A3A5A42919FC617B00FF9FA4 /* DMLazyScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = A3A5A42219FC617B00FF9FA4 /* DMLazyScrollView.m */; };
+		A3A5A42A19FC617B00FF9FA4 /* SACalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = A3A5A42419FC617B00FF9FA4 /* SACalendar.m */; };
+		A3A5A42B19FC617B00FF9FA4 /* SACalendarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A3A5A42619FC617B00FF9FA4 /* SACalendarCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,15 @@
 		A31A07B219FC0DE800017DA9 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
 		A31A07B419FC0EB300017DA9 /* AlertsTableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertsTableTableViewController.h; sourceTree = "<group>"; };
 		A31A07B519FC0EB300017DA9 /* AlertsTableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertsTableTableViewController.m; sourceTree = "<group>"; };
+		A3A5A41E19FC617B00FF9FA4 /* DateUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateUtil.h; sourceTree = "<group>"; };
+		A3A5A41F19FC617B00FF9FA4 /* DateUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateUtil.m; sourceTree = "<group>"; };
+		A3A5A42119FC617B00FF9FA4 /* DMLazyScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLazyScrollView.h; sourceTree = "<group>"; };
+		A3A5A42219FC617B00FF9FA4 /* DMLazyScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMLazyScrollView.m; sourceTree = "<group>"; };
+		A3A5A42319FC617B00FF9FA4 /* SACalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SACalendar.h; sourceTree = "<group>"; };
+		A3A5A42419FC617B00FF9FA4 /* SACalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SACalendar.m; sourceTree = "<group>"; };
+		A3A5A42519FC617B00FF9FA4 /* SACalendarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SACalendarCell.h; sourceTree = "<group>"; };
+		A3A5A42619FC617B00FF9FA4 /* SACalendarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SACalendarCell.m; sourceTree = "<group>"; };
+		A3A5A42719FC617B00FF9FA4 /* SACalendarConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SACalendarConstants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +109,7 @@
 				A31A07AD19FC090D00017DA9 /* View Controllers */,
 				A31A079119FC023700017DA9 /* Images.xcassets */,
 				A31A079319FC023700017DA9 /* LaunchScreen.xib */,
+				A3A5A41D19FC616500FF9FA4 /* SACalendar */,
 				A31A078419FC023700017DA9 /* Supporting Files */,
 			);
 			path = "Flatiron-App";
@@ -140,6 +154,30 @@
 				A31A07AF19FC0A1200017DA9 /* EveryoneTableTableViewController.m */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		A3A5A41D19FC616500FF9FA4 /* SACalendar */ = {
+			isa = PBXGroup;
+			children = (
+				A3A5A41E19FC617B00FF9FA4 /* DateUtil.h */,
+				A3A5A41F19FC617B00FF9FA4 /* DateUtil.m */,
+				A3A5A42019FC617B00FF9FA4 /* DMLazyScrollView */,
+				A3A5A42319FC617B00FF9FA4 /* SACalendar.h */,
+				A3A5A42419FC617B00FF9FA4 /* SACalendar.m */,
+				A3A5A42519FC617B00FF9FA4 /* SACalendarCell.h */,
+				A3A5A42619FC617B00FF9FA4 /* SACalendarCell.m */,
+				A3A5A42719FC617B00FF9FA4 /* SACalendarConstants.h */,
+			);
+			name = SACalendar;
+			sourceTree = "<group>";
+		};
+		A3A5A42019FC617B00FF9FA4 /* DMLazyScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				A3A5A42119FC617B00FF9FA4 /* DMLazyScrollView.h */,
+				A3A5A42219FC617B00FF9FA4 /* DMLazyScrollView.m */,
+			);
+			path = DMLazyScrollView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,12 +280,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3A5A42919FC617B00FF9FA4 /* DMLazyScrollView.m in Sources */,
 				A31A078A19FC023700017DA9 /* AppDelegate.m in Sources */,
 				A31A07AC19FC090100017DA9 /* ProfileViewController.m in Sources */,
 				A31A078719FC023700017DA9 /* main.m in Sources */,
+				A3A5A42819FC617B00FF9FA4 /* DateUtil.m in Sources */,
 				A31A07B319FC0DE800017DA9 /* CalendarViewController.m in Sources */,
 				A31A07B619FC0EB300017DA9 /* AlertsTableTableViewController.m in Sources */,
 				A31A07B019FC0A1200017DA9 /* EveryoneTableTableViewController.m in Sources */,
+				A3A5A42A19FC617B00FF9FA4 /* SACalendar.m in Sources */,
+				A3A5A42B19FC617B00FF9FA4 /* SACalendarCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
