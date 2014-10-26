@@ -79,7 +79,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="I9Y-yQ-cA8">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="I9Y-yQ-cA8">
                                 <rect key="frame" x="0.0" y="171" width="600" height="45"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -91,46 +91,37 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Is All Day Event" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="nYC-fO-k4M">
-                                <rect key="frame" x="0.0" y="275" width="600" height="45"/>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ends" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="X4Y-xe-Z4Y">
                                 <rect key="frame" x="0.0" y="381" width="600" height="45"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                             </textField>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Oh6-qj-vi1">
-                                <rect key="frame" x="541" y="235" width="51" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="49" id="i19-Sg-80K"/>
-                                </constraints>
-                            </switch>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="Add an event to the shared calendar." translatesAutoresizingMaskIntoConstraints="NO" id="WRf-H3-0r8">
                                 <rect key="frame" x="0.0" y="88" width="600" height="68"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Is All Day Event" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AKF-MT-Cnr" customClass="PaddedLabel">
+                                <rect key="frame" x="0.0" y="280" width="600" height="40"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Oh6-qj-vi1">
+                                <rect key="frame" x="543" y="284" width="51" height="31"/>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="nYC-fO-k4M" secondAttribute="trailing" constant="-16" id="205-dj-zAy"/>
-                            <constraint firstItem="3Yq-16-vmQ" firstAttribute="top" secondItem="Oh6-qj-vi1" secondAttribute="bottom" constant="15" id="3CE-mU-gie"/>
-                            <constraint firstItem="Oh6-qj-vi1" firstAttribute="top" secondItem="I9Y-yQ-cA8" secondAttribute="bottom" constant="66" id="8JS-Wh-Ngz"/>
                             <constraint firstAttribute="trailingMargin" secondItem="KIo-Gl-Dt6" secondAttribute="trailing" constant="-16" id="CT2-YP-m97"/>
                             <constraint firstItem="WRf-H3-0r8" firstAttribute="leading" secondItem="483-tw-5B5" secondAttribute="leadingMargin" constant="-16" id="Lwk-sg-zuZ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Oh6-qj-vi1" secondAttribute="trailing" constant="-6" id="MAS-Fd-6Ci"/>
-                            <constraint firstItem="nYC-fO-k4M" firstAttribute="top" secondItem="I9Y-yQ-cA8" secondAttribute="bottom" constant="59" id="Rg6-y4-Odd"/>
-                            <constraint firstItem="nYC-fO-k4M" firstAttribute="leading" secondItem="483-tw-5B5" secondAttribute="leadingMargin" constant="-16" id="RoE-vj-OGY"/>
-                            <constraint firstItem="3Yq-16-vmQ" firstAttribute="top" secondItem="nYC-fO-k4M" secondAttribute="bottom" constant="8" id="Txf-Id-OTL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Oh6-qj-vi1" secondAttribute="trailing" constant="-7" id="Nfd-Sq-WWB"/>
                             <constraint firstItem="WRf-H3-0r8" firstAttribute="top" secondItem="KIo-Gl-Dt6" secondAttribute="bottom" constant="24" id="Xvk-00-ap9"/>
-                            <constraint firstItem="nYC-fO-k4M" firstAttribute="leading" secondItem="3Yq-16-vmQ" secondAttribute="leading" id="ihU-fd-ngV"/>
+                            <constraint firstItem="Oh6-qj-vi1" firstAttribute="centerY" secondItem="AKF-MT-Cnr" secondAttribute="centerY" id="cjj-tU-tQq"/>
                             <constraint firstItem="KIo-Gl-Dt6" firstAttribute="top" secondItem="Pua-6V-qKB" secondAttribute="bottom" id="inj-G9-3di"/>
-                            <constraint firstItem="nYC-fO-k4M" firstAttribute="trailing" secondItem="3Yq-16-vmQ" secondAttribute="trailing" id="luh-35-0vr"/>
                             <constraint firstItem="X4Y-xe-Z4Y" firstAttribute="top" secondItem="3Yq-16-vmQ" secondAttribute="bottom" constant="8" id="qeF-W2-xcu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="WRf-H3-0r8" secondAttribute="trailing" constant="-16" id="rzj-0O-HPL"/>
                             <constraint firstItem="KIo-Gl-Dt6" firstAttribute="leading" secondItem="483-tw-5B5" secondAttribute="leadingMargin" constant="-16" id="zKM-cn-xbd"/>
@@ -138,9 +129,9 @@
                     </view>
                     <connections>
                         <outlet property="endDateInput" destination="X4Y-xe-Z4Y" id="sho-tc-6Xf"/>
-                        <outlet property="isAllDayEventInput" destination="nYC-fO-k4M" id="Eb3-ky-xJj"/>
                         <outlet property="saveButton" destination="LlH-Jb-oh2" id="7aX-Z4-h7w"/>
                         <outlet property="startDateInput" destination="3Yq-16-vmQ" id="TYK-2X-cKS"/>
+                        <outlet property="switchInput" destination="Oh6-qj-vi1" id="7uF-jI-FCK"/>
                         <outlet property="titleInput" destination="I9Y-yQ-cA8" id="dnG-Bk-tkq"/>
                     </connections>
                 </viewController>
