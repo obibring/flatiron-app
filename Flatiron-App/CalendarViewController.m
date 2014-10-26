@@ -7,6 +7,7 @@
 //
 
 #import "CalendarViewController.h"
+#import "AddEventViewController.h"
 #import "SACalendar.h"
 
 @interface CalendarViewController () <SACalendarDelegate>
@@ -26,6 +27,8 @@
     [self.calendarContainerView addSubview:calendar];
     calendar.delegate = self;
 }
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -65,15 +68,14 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    AddEventViewController *addVc = segue.destinationViewController;
+    addVc.dateOfEvent = self.selectedDate;
+    addVc.delegate = self;
 }
-*/
 
 #pragma mark - utilities
 
@@ -94,6 +96,17 @@
 
 -(void)SACalendar:(SACalendar *)calendar didDisplayCalendarForMonth:(int)month year:(int)year {
     
+}
+
+#pragma mark - AddEventDelegate
+
+-(void)addEventViewControllerDidSave:(id)addEventViewController {
+    
+}
+
+
+-(void)addEventViewControllerDidCancel:(id)addEventViewController {
+    [self dismissViewControllerAnimated:addEventViewController completion:nil];
 }
 
 @end

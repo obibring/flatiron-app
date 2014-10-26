@@ -21,6 +21,7 @@
 		A3A5A42919FC617B00FF9FA4 /* DMLazyScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = A3A5A42219FC617B00FF9FA4 /* DMLazyScrollView.m */; };
 		A3A5A42A19FC617B00FF9FA4 /* SACalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = A3A5A42419FC617B00FF9FA4 /* SACalendar.m */; };
 		A3A5A42B19FC617B00FF9FA4 /* SACalendarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A3A5A42619FC617B00FF9FA4 /* SACalendarCell.m */; };
+		A3A5A42F19FC64E200FF9FA4 /* AddEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3A5A42E19FC64E200FF9FA4 /* AddEventViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,9 @@
 		A3A5A42519FC617B00FF9FA4 /* SACalendarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SACalendarCell.h; sourceTree = "<group>"; };
 		A3A5A42619FC617B00FF9FA4 /* SACalendarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SACalendarCell.m; sourceTree = "<group>"; };
 		A3A5A42719FC617B00FF9FA4 /* SACalendarConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SACalendarConstants.h; sourceTree = "<group>"; };
+		A3A5A42D19FC64E200FF9FA4 /* AddEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddEventViewController.h; sourceTree = "<group>"; };
+		A3A5A42E19FC64E200FF9FA4 /* AddEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddEventViewController.m; sourceTree = "<group>"; };
+		A3A5A43019FC6AF800FF9FA4 /* AddEventDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddEventDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,8 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				A31A07AA19FC090100017DA9 /* ProfileViewController.h */,
-				A31A07B119FC0DE800017DA9 /* CalendarViewController.h */,
-				A31A07B219FC0DE800017DA9 /* CalendarViewController.m */,
+				A3A5A42C19FC64C200FF9FA4 /* Events */,
 				A31A07B419FC0EB300017DA9 /* AlertsTableTableViewController.h */,
 				A31A07B519FC0EB300017DA9 /* AlertsTableTableViewController.m */,
 				A31A07AB19FC090100017DA9 /* ProfileViewController.m */,
@@ -178,6 +181,18 @@
 				A3A5A42219FC617B00FF9FA4 /* DMLazyScrollView.m */,
 			);
 			path = DMLazyScrollView;
+			sourceTree = "<group>";
+		};
+		A3A5A42C19FC64C200FF9FA4 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				A3A5A43019FC6AF800FF9FA4 /* AddEventDelegate.h */,
+				A31A07B119FC0DE800017DA9 /* CalendarViewController.h */,
+				A31A07B219FC0DE800017DA9 /* CalendarViewController.m */,
+				A3A5A42D19FC64E200FF9FA4 /* AddEventViewController.h */,
+				A3A5A42E19FC64E200FF9FA4 /* AddEventViewController.m */,
+			);
+			name = Events;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,6 +301,7 @@
 				A31A078719FC023700017DA9 /* main.m in Sources */,
 				A3A5A42819FC617B00FF9FA4 /* DateUtil.m in Sources */,
 				A31A07B319FC0DE800017DA9 /* CalendarViewController.m in Sources */,
+				A3A5A42F19FC64E200FF9FA4 /* AddEventViewController.m in Sources */,
 				A31A07B619FC0EB300017DA9 /* AlertsTableTableViewController.m in Sources */,
 				A31A07B019FC0A1200017DA9 /* EveryoneTableTableViewController.m in Sources */,
 				A3A5A42A19FC617B00FF9FA4 /* SACalendar.m in Sources */,
