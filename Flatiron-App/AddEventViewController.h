@@ -10,7 +10,7 @@
 #import "AddEventDelegate.h"
 
 
-@interface AddEventViewController : UIViewController
+@interface AddEventViewController : UIViewController <UITextFieldDelegate>
 
 @property (strong, nonatomic) NSDate *dateOfEvent;
 @property (weak, nonatomic) id <AddEventDelegate> delegate;
