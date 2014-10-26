@@ -182,37 +182,35 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C1z-c1-W4I">
                                 <rect key="frame" x="166" y="270" width="30" height="30"/>
-                                <state key="normal" title="in">
+                                <state key="normal" backgroundImage="linkedinGray.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UXq-XB-wTh">
                                 <rect key="frame" x="216" y="270" width="30" height="30"/>
-                                <state key="normal" title="g+">
+                                <state key="normal" backgroundImage="google_plusGray.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="edy-Xa-d1i">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="edy-Xa-d1i">
                                 <rect key="frame" x="16" y="270" width="30" height="30"/>
-                                <state key="normal" backgroundImage="github.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <state key="normal" backgroundImage="githubGray.png"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oGQ-PU-L4b">
                                 <rect key="frame" x="116" y="270" width="30" height="30"/>
-                                <state key="normal" title="t">
+                                <state key="normal" backgroundImage="twitterGray.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vWh-Vz-Ghp">
                                 <rect key="frame" x="66" y="270" width="30" height="30"/>
-                                <state key="normal" title="f">
+                                <state key="normal" backgroundImage="facebookGray.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N1g-Ld-A2S">
                                 <rect key="frame" x="266" y="270" width="30" height="30"/>
-                                <state key="normal" title="Me">
+                                <state key="normal" backgroundImage="youtube_altGray.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -286,6 +284,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="github.png" width="64" height="64"/>
+        <image name="facebookGray.png" width="64" height="64"/>
+        <image name="githubGray.png" width="64" height="64"/>
+        <image name="google_plusGray.png" width="64" height="64"/>
+        <image name="linkedinGray.png" width="64" height="64"/>
+        <image name="twitterGray.png" width="64" height="64"/>
+        <image name="youtube_altGray.png" width="64" height="64"/>
     </resources>
 </document>
