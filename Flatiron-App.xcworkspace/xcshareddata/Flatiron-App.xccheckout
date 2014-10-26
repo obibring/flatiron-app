@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C7945CCA-7951-4CE4-A950-EBE34D4D8A46</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Flatiron-App</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F57DF444E6BDF180A7DD43A4CC44CF08C73CD49B</key>
+		<string>github.com:obibring/flatiron-app.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Flatiron-App.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F57DF444E6BDF180A7DD43A4CC44CF08C73CD49B</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:obibring/flatiron-app.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F57DF444E6BDF180A7DD43A4CC44CF08C73CD49B</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F57DF444E6BDF180A7DD43A4CC44CF08C73CD49B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>flatiron-app</string>
+		</dict>
+	</array>
+</dict>
+</plist>
