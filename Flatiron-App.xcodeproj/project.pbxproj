@@ -36,6 +36,7 @@
 		CB312F9119FD674D009EFEA9 /* google_plus.png in Resources */ = {isa = PBXBuildFile; fileRef = CB312F8C19FD674D009EFEA9 /* google_plus.png */; };
 		CB312F9219FD674D009EFEA9 /* linkedin.png in Resources */ = {isa = PBXBuildFile; fileRef = CB312F8D19FD674D009EFEA9 /* linkedin.png */; };
 		CB312F9319FD674D009EFEA9 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = CB312F8E19FD674D009EFEA9 /* twitter.png */; };
+		CB312FAD19FD91B2009EFEA9 /* twitterGray.png in Resources */ = {isa = PBXBuildFile; fileRef = CB312FAC19FD91B2009EFEA9 /* twitterGray.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,7 @@
 		CB312F8C19FD674D009EFEA9 /* google_plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = google_plus.png; sourceTree = "<group>"; };
 		CB312F8D19FD674D009EFEA9 /* linkedin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = linkedin.png; sourceTree = "<group>"; };
 		CB312F8E19FD674D009EFEA9 /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
+		CB312FAC19FD91B2009EFEA9 /* twitterGray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitterGray.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +258,7 @@
 				CB312F8A19FD674D009EFEA9 /* facebook.png */,
 				CB312F8B19FD674D009EFEA9 /* github.png */,
 				CB312F8C19FD674D009EFEA9 /* google_plus.png */,
+				CB312FAC19FD91B2009EFEA9 /* twitterGray.png */,
 				CB312F8D19FD674D009EFEA9 /* linkedin.png */,
 				CB312F8E19FD674D009EFEA9 /* twitter.png */,
 			);
@@ -350,6 +353,7 @@
 				A31A079019FC023700017DA9 /* Main.storyboard in Resources */,
 				CB312F9119FD674D009EFEA9 /* google_plus.png in Resources */,
 				A31A079519FC023700017DA9 /* LaunchScreen.xib in Resources */,
+				CB312FAD19FD91B2009EFEA9 /* twitterGray.png in Resources */,
 				CB312F6319FC5ECA009EFEA9 /* professional-profiles.png in Resources */,
 				A31A079219FC023700017DA9 /* Images.xcassets in Resources */,
 				CB312F9219FD674D009EFEA9 /* linkedin.png in Resources */,
