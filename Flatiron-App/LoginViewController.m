@@ -1,29 +1,23 @@
 //
-//  OnboardingViewController.m
+//  LoginViewController.m
 //  Flatiron-App
 //
 //  Created by Orr Bibring on 10/26/14.
 //  Copyright (c) 2014 Orr Bibring. All rights reserved.
 //
 
-#import "OnboardingViewController.h"
-#import <Parse/Parse.h>
+#import "LoginViewController.h"
 
-@interface OnboardingViewController () 
+@interface LoginViewController ()
 
 @end
 
-@implementation OnboardingViewController
+@implementation LoginViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-}
-
--(void)viewDidAppear:(BOOL)animated {
-    PFLogInViewController *loginVc = [[PFLogInViewController alloc] init];
-    [self presentViewController:loginVc animated:YES completion:nil];
-    loginVc.delegate = self;
+    
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 - (void)didReceiveMemoryWarning {

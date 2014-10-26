@@ -1,5 +1,5 @@
 //
-//  OnboardingViewController.h
+//  LoginViewController.h
 //  Flatiron-App
 //
 //  Created by Orr Bibring on 10/26/14.
@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 
-@interface OnboardingViewController : UIViewController <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
+@interface LoginViewController : PFLogInViewController
 
 @end

@@ -23,6 +23,8 @@
 		A3909D4919FD8A0000C640E2 /* SACalendarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A3909D4619FD8A0000C640E2 /* SACalendarCell.m */; };
 		A3909D4D19FD8BF100C640E2 /* DateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A3909D4C19FD8BF100C640E2 /* DateUtil.m */; };
 		A3909D5019FD9A2500C640E2 /* OnboardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3909D4F19FD9A2500C640E2 /* OnboardingViewController.m */; };
+		A3909D5319FD9C5800C640E2 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3909D5219FD9C5800C640E2 /* LoginViewController.m */; };
+		A3909D5519FD9D0700C640E2 /* flatiron-logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A3909D5419FD9D0700C640E2 /* flatiron-logo.jpg */; };
 		B4820A4E0261E8D463ECB1B9 /* libPods-Flatiron-App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 542557DF3D518B20213FD004 /* libPods-Flatiron-App.a */; };
 		CB312F4219FC26CD009EFEA9 /* Steve-Carell-Brick-Tamland-Anchorman.png in Resources */ = {isa = PBXBuildFile; fileRef = CB312F4119FC26CD009EFEA9 /* Steve-Carell-Brick-Tamland-Anchorman.png */; };
 		CB312F4419FC3A24009EFEA9 /* edit.png in Resources */ = {isa = PBXBuildFile; fileRef = CB312F4319FC3A24009EFEA9 /* edit.png */; };
@@ -91,6 +93,9 @@
 		A3909D4C19FD8BF100C640E2 /* DateUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateUtil.m; sourceTree = "<group>"; };
 		A3909D4E19FD9A2500C640E2 /* OnboardingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnboardingViewController.h; sourceTree = "<group>"; };
 		A3909D4F19FD9A2500C640E2 /* OnboardingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnboardingViewController.m; sourceTree = "<group>"; };
+		A3909D5119FD9C5800C640E2 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		A3909D5219FD9C5800C640E2 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		A3909D5419FD9D0700C640E2 /* flatiron-logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "flatiron-logo.jpg"; sourceTree = "<group>"; };
 		CB312F4119FC26CD009EFEA9 /* Steve-Carell-Brick-Tamland-Anchorman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Steve-Carell-Brick-Tamland-Anchorman.png"; sourceTree = "<group>"; };
 		CB312F4319FC3A24009EFEA9 /* edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit.png; sourceTree = "<group>"; };
 		CB312F4719FC4157009EFEA9 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -232,6 +237,8 @@
 				A31A07AF19FC0A1200017DA9 /* EveryoneTableTableViewController.m */,
 				A3909D4E19FD9A2500C640E2 /* OnboardingViewController.h */,
 				A3909D4F19FD9A2500C640E2 /* OnboardingViewController.m */,
+				A3909D5119FD9C5800C640E2 /* LoginViewController.h */,
+				A3909D5219FD9C5800C640E2 /* LoginViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -290,6 +297,7 @@
 		CB312F8919FD6700009EFEA9 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				A3909D5419FD9D0700C640E2 /* flatiron-logo.jpg */,
 				CB312F8A19FD674D009EFEA9 /* facebook.png */,
 				CB312F8B19FD674D009EFEA9 /* github.png */,
 				CB312F8C19FD674D009EFEA9 /* google_plus.png */,
@@ -398,6 +406,7 @@
 				CB312FB219FD95A3009EFEA9 /* githubGray.png in Resources */,
 				CB312FAD19FD91B2009EFEA9 /* twitterGray.png in Resources */,
 				CB312F6319FC5ECA009EFEA9 /* professional-profiles.png in Resources */,
+				A3909D5519FD9D0700C640E2 /* flatiron-logo.jpg in Resources */,
 				A31A079219FC023700017DA9 /* Images.xcassets in Resources */,
 				CB312F9219FD674D009EFEA9 /* linkedin.png in Resources */,
 			);
@@ -464,6 +473,7 @@
 				A31A078719FC023700017DA9 /* main.m in Sources */,
 				A31A07B319FC0DE800017DA9 /* CalendarViewController.m in Sources */,
 				CB312F8219FC8F2A009EFEA9 /* Image.m in Sources */,
+				A3909D5319FD9C5800C640E2 /* LoginViewController.m in Sources */,
 				A31A07B619FC0EB300017DA9 /* AlertsTableTableViewController.m in Sources */,
 				A31A07B019FC0A1200017DA9 /* EveryoneTableTableViewController.m in Sources */,
 				A3909D4919FD8A0000C640E2 /* SACalendarCell.m in Sources */,

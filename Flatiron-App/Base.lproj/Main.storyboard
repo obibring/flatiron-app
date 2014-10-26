@@ -293,10 +293,10 @@
             </objects>
             <point key="canvasLocation" x="-495" y="1103"/>
         </scene>
-        <!--View Controller-->
+        <!--Onboarding View Controller-->
         <scene sceneID="d28-XQ-H5e">
             <objects>
-                <viewController id="v0y-Eh-NUd" sceneMemberID="viewController">
+                <viewController id="v0y-Eh-NUd" customClass="OnboardingViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="O3e-j5-tb1"/>
                         <viewControllerLayoutGuide type="bottom" id="LJl-ln-dLk"/>
