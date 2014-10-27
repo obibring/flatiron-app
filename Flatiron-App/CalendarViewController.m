@@ -8,7 +8,6 @@
 
 #import "CalendarViewController.h"
 #import "AddEventViewController.h"
-#import "EventDetailViewController.h"
 #import "SACalendar.h"
 #import "Constants.h"
 #import <Parse/Parse.h>
@@ -80,15 +79,9 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // If we are segueing to the detail view controller, pass the event.
-    if ([segue.destinationViewController isKindOfClass:[EventDetailViewController class]]) {
-        PFObject *event = [self eventsForDate:self.selectedDate][[self.tableView indexPathForSelectedRow].row];
-        EventDetailViewController *detailVc = segue.destinationViewController;
-        detailVc.event = event;
-    } else {
-        AddEventViewController *addVc = segue.destinationViewController;
-        addVc.defaultDatePickerDate = self.selectedDate;
-        addVc.delegate = self;
-    }
+    AddEventViewController *addVc = segue.destinationViewController;
+    addVc.defaultDatePickerDate = self.selectedDate;
+    addVc.delegate = self;
 }
 
 #pragma mark - utilities

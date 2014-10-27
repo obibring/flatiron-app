@@ -24,18 +24,14 @@
 		A3909D4D19FD8BF100C640E2 /* DateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A3909D4C19FD8BF100C640E2 /* DateUtil.m */; };
 		A3909D5019FD9A2500C640E2 /* OnboardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3909D4F19FD9A2500C640E2 /* OnboardingViewController.m */; };
 		A3909D5319FD9C5800C640E2 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3909D5219FD9C5800C640E2 /* LoginViewController.m */; };
-		A3909D5919FD9F4000C640E2 /* flatiron-logo-resized.png in Resources */ = {isa = PBXBuildFile; fileRef = A3909D5819FD9F4000C640E2 /* flatiron-logo-resized.png */; };
-		A3909D5F19FDCF2600C640E2 /* EventCalendarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A3909D5E19FDCF2600C640E2 /* EventCalendarCell.m */; };
+		A3909D5519FD9D0700C640E2 /* flatiron-logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A3909D5419FD9D0700C640E2 /* flatiron-logo.jpg */; };
+		A3C3A08D19FF093500676BDA /* EventCalendarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A3C3A08C19FF093500676BDA /* EventCalendarCell.m */; };
 		B4820A4E0261E8D463ECB1B9 /* libPods-Flatiron-App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 542557DF3D518B20213FD004 /* libPods-Flatiron-App.a */; };
 		CB312F4219FC26CD009EFEA9 /* Steve-Carell-Brick-Tamland-Anchorman.png in Resources */ = {isa = PBXBuildFile; fileRef = CB312F4119FC26CD009EFEA9 /* Steve-Carell-Brick-Tamland-Anchorman.png */; };
 		CB312F4419FC3A24009EFEA9 /* edit.png in Resources */ = {isa = PBXBuildFile; fileRef = CB312F4319FC3A24009EFEA9 /* edit.png */; };
 		CB312F4819FC4157009EFEA9 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CB312F4619FC4157009EFEA9 /* Model.xcdatamodeld */; };
 		CB312F5C19FC4B69009EFEA9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB312F5B19FC4B69009EFEA9 /* CoreData.framework */; };
 		CB312F6319FC5ECA009EFEA9 /* professional-profiles.png in Resources */ = {isa = PBXBuildFile; fileRef = CB312F6219FC5ECA009EFEA9 /* professional-profiles.png */; };
-		CB312F7619FC6B15009EFEA9 /* DataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = CB312F7419FC6B15009EFEA9 /* DataStore.m */; };
-		CB312F7C19FC8F2A009EFEA9 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = CB312F7B19FC8F2A009EFEA9 /* Person.m */; };
-		CB312F7F19FC8F2A009EFEA9 /* Program.m in Sources */ = {isa = PBXBuildFile; fileRef = CB312F7E19FC8F2A009EFEA9 /* Program.m */; };
-		CB312F8219FC8F2A009EFEA9 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = CB312F8119FC8F2A009EFEA9 /* Image.m */; };
 		CB312F8F19FD674D009EFEA9 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = CB312F8A19FD674D009EFEA9 /* facebook.png */; };
 		CB312F9019FD674D009EFEA9 /* github.png in Resources */ = {isa = PBXBuildFile; fileRef = CB312F8B19FD674D009EFEA9 /* github.png */; };
 		CB312F9119FD674D009EFEA9 /* google_plus.png in Resources */ = {isa = PBXBuildFile; fileRef = CB312F8C19FD674D009EFEA9 /* google_plus.png */; };
@@ -45,6 +41,7 @@
 		CB312FB119FD95A3009EFEA9 /* facebookGray.png in Resources */ = {isa = PBXBuildFile; fileRef = CB312FAE19FD95A3009EFEA9 /* facebookGray.png */; };
 		CB312FB219FD95A3009EFEA9 /* githubGray.png in Resources */ = {isa = PBXBuildFile; fileRef = CB312FAF19FD95A3009EFEA9 /* githubGray.png */; };
 		CB312FB319FD95A3009EFEA9 /* linkedinGray.png in Resources */ = {isa = PBXBuildFile; fileRef = CB312FB019FD95A3009EFEA9 /* linkedinGray.png */; };
+		CB46ECE319FEF9410017CC83 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB46ECE219FEF9410017CC83 /* MeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,23 +93,14 @@
 		A3909D4F19FD9A2500C640E2 /* OnboardingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnboardingViewController.m; sourceTree = "<group>"; };
 		A3909D5119FD9C5800C640E2 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		A3909D5219FD9C5800C640E2 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		A3909D5819FD9F4000C640E2 /* flatiron-logo-resized.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flatiron-logo-resized.png"; sourceTree = "<group>"; };
-		A3909D5D19FDCF2600C640E2 /* EventCalendarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventCalendarCell.h; sourceTree = "<group>"; };
-		A3909D5E19FDCF2600C640E2 /* EventCalendarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventCalendarCell.m; sourceTree = "<group>"; };
-		A3909D6419FEC9BB00C640E2 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		A3909D5419FD9D0700C640E2 /* flatiron-logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "flatiron-logo.jpg"; sourceTree = "<group>"; };
+		A3C3A08B19FF092F00676BDA /* EventCalendarCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventCalendarCell.h; sourceTree = "<group>"; };
+		A3C3A08C19FF093500676BDA /* EventCalendarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventCalendarCell.m; sourceTree = "<group>"; };
 		CB312F4119FC26CD009EFEA9 /* Steve-Carell-Brick-Tamland-Anchorman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Steve-Carell-Brick-Tamland-Anchorman.png"; sourceTree = "<group>"; };
 		CB312F4319FC3A24009EFEA9 /* edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit.png; sourceTree = "<group>"; };
 		CB312F4719FC4157009EFEA9 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		CB312F5B19FC4B69009EFEA9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		CB312F6219FC5ECA009EFEA9 /* professional-profiles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "professional-profiles.png"; sourceTree = SOURCE_ROOT; };
-		CB312F7419FC6B15009EFEA9 /* DataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataStore.m; sourceTree = "<group>"; };
-		CB312F7519FC6B15009EFEA9 /* DataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataStore.h; sourceTree = "<group>"; };
-		CB312F7A19FC8F2A009EFEA9 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
-		CB312F7B19FC8F2A009EFEA9 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
-		CB312F7D19FC8F2A009EFEA9 /* Program.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Program.h; sourceTree = "<group>"; };
-		CB312F7E19FC8F2A009EFEA9 /* Program.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Program.m; sourceTree = "<group>"; };
-		CB312F8019FC8F2A009EFEA9 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
-		CB312F8119FC8F2A009EFEA9 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
 		CB312F8A19FD674D009EFEA9 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
 		CB312F8B19FD674D009EFEA9 /* github.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = github.png; sourceTree = "<group>"; };
 		CB312F8C19FD674D009EFEA9 /* google_plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = google_plus.png; sourceTree = "<group>"; };
@@ -122,6 +110,8 @@
 		CB312FAE19FD95A3009EFEA9 /* facebookGray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebookGray.png; sourceTree = "<group>"; };
 		CB312FAF19FD95A3009EFEA9 /* githubGray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = githubGray.png; sourceTree = "<group>"; };
 		CB312FB019FD95A3009EFEA9 /* linkedinGray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = linkedinGray.png; sourceTree = "<group>"; };
+		CB46ECE119FEF9410017CC83 /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
+		CB46ECE219FEF9410017CC83 /* MeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,7 +176,6 @@
 			children = (
 				A31A078819FC023700017DA9 /* AppDelegate.h */,
 				A31A078919FC023700017DA9 /* AppDelegate.m */,
-				A3909D6419FEC9BB00C640E2 /* Constants.h */,
 				A31A078E19FC023700017DA9 /* Main.storyboard */,
 				CB312F4519FC412E009EFEA9 /* Core Data */,
 				A31A07AD19FC090D00017DA9 /* View Controllers */,
@@ -244,6 +233,8 @@
 				A3909D4F19FD9A2500C640E2 /* OnboardingViewController.m */,
 				A3909D5119FD9C5800C640E2 /* LoginViewController.h */,
 				A3909D5219FD9C5800C640E2 /* LoginViewController.m */,
+				CB46ECE119FEF9410017CC83 /* MeViewController.h */,
+				CB46ECE219FEF9410017CC83 /* MeViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -265,9 +256,9 @@
 				A3909D4319FD8A0000C640E2 /* SACalendar.h */,
 				A3909D4419FD8A0000C640E2 /* SACalendar.m */,
 				A3909D4519FD8A0000C640E2 /* SACalendarCell.h */,
+				A3C3A08B19FF092F00676BDA /* EventCalendarCell.h */,
+				A3C3A08C19FF093500676BDA /* EventCalendarCell.m */,
 				A3909D4619FD8A0000C640E2 /* SACalendarCell.m */,
-				A3909D5D19FDCF2600C640E2 /* EventCalendarCell.h */,
-				A3909D5E19FDCF2600C640E2 /* EventCalendarCell.m */,
 				A3909D4719FD8A0000C640E2 /* SACalendarConstants.h */,
 				A3909D3F19FD89F200C640E2 /* DMLazyScrollView */,
 			);
@@ -288,14 +279,6 @@
 			isa = PBXGroup;
 			children = (
 				CB312F4619FC4157009EFEA9 /* Model.xcdatamodeld */,
-				CB312F8019FC8F2A009EFEA9 /* Image.h */,
-				CB312F8119FC8F2A009EFEA9 /* Image.m */,
-				CB312F7D19FC8F2A009EFEA9 /* Program.h */,
-				CB312F7E19FC8F2A009EFEA9 /* Program.m */,
-				CB312F7A19FC8F2A009EFEA9 /* Person.h */,
-				CB312F7B19FC8F2A009EFEA9 /* Person.m */,
-				CB312F7419FC6B15009EFEA9 /* DataStore.m */,
-				CB312F7519FC6B15009EFEA9 /* DataStore.h */,
 				CB312F5B19FC4B69009EFEA9 /* CoreData.framework */,
 			);
 			name = "Core Data";
@@ -304,7 +287,7 @@
 		CB312F8919FD6700009EFEA9 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
-				A3909D5819FD9F4000C640E2 /* flatiron-logo-resized.png */,
+				A3909D5419FD9D0700C640E2 /* flatiron-logo.jpg */,
 				CB312F8A19FD674D009EFEA9 /* facebook.png */,
 				CB312F8B19FD674D009EFEA9 /* github.png */,
 				CB312F8C19FD674D009EFEA9 /* google_plus.png */,
@@ -412,8 +395,8 @@
 				CB312FB319FD95A3009EFEA9 /* linkedinGray.png in Resources */,
 				CB312FB219FD95A3009EFEA9 /* githubGray.png in Resources */,
 				CB312FAD19FD91B2009EFEA9 /* twitterGray.png in Resources */,
-				A3909D5919FD9F4000C640E2 /* flatiron-logo-resized.png in Resources */,
 				CB312F6319FC5ECA009EFEA9 /* professional-profiles.png in Resources */,
+				A3909D5519FD9D0700C640E2 /* flatiron-logo.jpg in Resources */,
 				A31A079219FC023700017DA9 /* Images.xcassets in Resources */,
 				CB312F9219FD674D009EFEA9 /* linkedin.png in Resources */,
 			);
@@ -466,10 +449,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB312F7619FC6B15009EFEA9 /* DataStore.m in Sources */,
 				A3909D4D19FD8BF100C640E2 /* DateUtil.m in Sources */,
-				CB312F7F19FC8F2A009EFEA9 /* Program.m in Sources */,
-				CB312F7C19FC8F2A009EFEA9 /* Person.m in Sources */,
 				A31A078A19FC023700017DA9 /* AppDelegate.m in Sources */,
 				A3909D5019FD9A2500C640E2 /* OnboardingViewController.m in Sources */,
 				A31A07AC19FC090100017DA9 /* ProfileViewController.m in Sources */,
@@ -478,9 +458,9 @@
 				CB312F4819FC4157009EFEA9 /* Model.xcdatamodeld in Sources */,
 				A3909D4219FD89F200C640E2 /* DMLazyScrollView.m in Sources */,
 				A31A078719FC023700017DA9 /* main.m in Sources */,
+				CB46ECE319FEF9410017CC83 /* MeViewController.m in Sources */,
+				A3C3A08D19FF093500676BDA /* EventCalendarCell.m in Sources */,
 				A31A07B319FC0DE800017DA9 /* CalendarViewController.m in Sources */,
-				CB312F8219FC8F2A009EFEA9 /* Image.m in Sources */,
-				A3909D5F19FDCF2600C640E2 /* EventCalendarCell.m in Sources */,
 				A3909D5319FD9C5800C640E2 /* LoginViewController.m in Sources */,
 				A31A07B619FC0EB300017DA9 /* AlertsTableTableViewController.m in Sources */,
 				A31A07B019FC0A1200017DA9 /* EveryoneTableTableViewController.m in Sources */,
@@ -543,8 +523,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Orr Bibring (DRQVRP2WRE)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Orr Bibring (DRQVRP2WRE)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -585,8 +564,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Orr Bibring (DRQVRP2WRE)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Orr Bibring (DRQVRP2WRE)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -610,7 +588,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Flatiron-App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -622,7 +599,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Flatiron-App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

@@ -7,11 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@class Person;
+#import <Parse/Parse.h>
 
 @interface ProfileViewController : UIViewController
 
-@property (strong, nonatomic) Person *person;
+@property (strong, nonatomic) PFUser *user;
 
 @end

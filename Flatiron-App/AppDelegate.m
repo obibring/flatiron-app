@@ -19,28 +19,28 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+
     self.window.tintColor = flatironBlueLight;
-    
+
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    
+
     //Setup Parse application
     [Parse setApplicationId:@"rHT2ppWvtYGMh4LQoF3C2yd0imLqtlr8ekXx7tho"
                   clientKey:@"4h32PZf2F3f6XkcnDPsUWMkagID8QdRiVE6yWeCB"];
-   
+
     // Track statistics around application opens
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
-    
+
     // Check if the user is logged in
     if ([PFUser currentUser]) {
         self.window.rootViewController = [self firstLoggedInViewController];
     } else {
         self.window.rootViewController = [[OnboardingViewController alloc] init];
     }
-    
+
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didLogin:) name:@"login" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didLogout:) name:@"logout" object:nil];
-    
+
     // Register for Push Notitications, if running iOS 8
     if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
         UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
@@ -56,7 +56,7 @@
                                                          UIRemoteNotificationTypeAlert |
                                                          UIRemoteNotificationTypeSound)];
     }
-    
+
     return YES;
 }
 

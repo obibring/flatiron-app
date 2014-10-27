@@ -7,21 +7,28 @@
 //
 
 #import "ProfileViewController.h"
-#import "DataStore.h"
-#import "Person.h"
-#import "Program.h"
-#import "Image.h"
 
 @interface ProfileViewController ()
+//Basic info
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
 @property (weak, nonatomic) IBOutlet UILabel *name;
 @property (weak, nonatomic) IBOutlet UILabel *program;
+//Contact info
+@property (weak, nonatomic) IBOutlet UILabel *email;
+@property (weak, nonatomic) IBOutlet UILabel *cellNumber;
+@property (weak, nonatomic) IBOutlet UIButton *gitHubButton;
+@property (weak, nonatomic) IBOutlet UIButton *facebookButton;
+@property (weak, nonatomic) IBOutlet UIButton *twitterButton;
+@property (weak, nonatomic) IBOutlet UIButton *linkedInButton;
+//Bio
 @property (weak, nonatomic) IBOutlet UILabel *before;
 @property (weak, nonatomic) IBOutlet UILabel *after;
 @property (weak, nonatomic) IBOutlet UILabel *fun;
-@property (weak, nonatomic) IBOutlet UIButton *gitHubButton;
-
-
+//Social buttons tapped
+- (IBAction)gitHubButtonTapped:(id)sender;
+- (IBAction)facebookButtonTapped:(id)sender;
+- (IBAction)twitterButtonTapped:(id)sender;
+- (IBAction)linkedInButtonTapped:(id)sender;
 
 @end
 
@@ -29,8 +36,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     [self fillProfileInformation];
+    [self resetSocialIcons];
+    [self activateSocialIcons];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -39,48 +47,67 @@
 }
 
 - (void) fillProfileInformation {
-    Person *person = self.person;
-    [self setImageOfPerson:person rounded:YES border:YES];
-    self.name.text = [self getFullNameOf:person capitalized:YES];
-    self.program.text = person.program.name;
-    self.before.text = person.before;
-    self.after.text = person.after;
-    self.fun.text = person.fun;
+    [self getProfileImageRounded:YES border:YES];
+    self.name.text = self.title; //The title of the view was set to the full name;
+    self.program.text = self.user[@"program"];
+    self.before.text = self.user[@"beforeBio"];
+    self.after.text = self.user[@"afterBio"];
+    self.fun.text = self.user[@"funFact"];
+    self.email.text = self.user.email;
     
 }
 
-- (void) setSocialIcons:(Person *)person {
-    UIImage *gitHubIcon = [UIImage imageNamed:@"github.png"];
-    [self.gitHubButton setImage:gitHubIcon forState:UIControlStateNormal];
+- (void) resetSocialIcons {
+    self.gitHubButton.enabled = NO;
+    self.facebookButton.enabled = NO;
+    self.twitterButton.enabled = NO;
+    self.linkedInButton.enabled = NO;
+}
+
+- (void) activateSocialIcons {
+    if (self.user[@"gitHubURL"]) {
+        UIImage *gitHubIcon = [UIImage imageNamed:@"github.png"];
+        [self.gitHubButton setImage:gitHubIcon forState:UIControlStateNormal];
+        self.gitHubButton.enabled = YES;
+    }
+    
+    if (self.user[@"facebookURL"]) {
+        UIImage *facebookIcon = [UIImage imageNamed:@"facebook.png"];
+        [self.facebookButton setImage:facebookIcon forState:UIControlStateNormal];
+        self.facebookButton.enabled = YES;
+    }
+    
+    if (self.user[@"twitterURL"]) {
+        UIImage *twitterIcon = [UIImage imageNamed:@"twitter.png"];
+        [self.twitterButton setImage:twitterIcon forState:UIControlStateNormal];
+        self.twitterButton.enabled = YES;
+    }
+    
+    if (self.user[@"linkedInURL"]) {
+        UIImage *linkedInIcon = [UIImage imageNamed:@"linkedin.png"];
+        [self.linkedInButton setImage:linkedInIcon forState:UIControlStateNormal];
+        self.linkedInButton.enabled = YES;
+    }
 }
 
 
-- (void) setImageOfPerson:(Person *)person rounded:(BOOL)isRounded border:(BOOL)isBorder {
-    //Fetch image
-    UIImage *profileImage = [UIImage imageWithData:person.image.image];
-    //Rounded settings. BOOL activates/deactivates.
-    self.profileImage.layer.cornerRadius = self.profileImage.frame.size.width / 15;
-    self.profileImage.clipsToBounds = isRounded;
-    //Border settings. BOOL activates/deactivates.
-    if (isBorder) {
-        [self.profileImage.layer setBorderColor:[[UIColor whiteColor] CGColor]];
-        [self.profileImage.layer setBorderWidth:5.0];
-    }
-    //Assign image
-    self.profileImage.image = profileImage;
-}
-
-//Duplicate method from EveryoneTableViewController
-- (NSString *) getFullNameOf:(Person *)person capitalized:(BOOL)isCapitalized {
-    NSString *firstName = person.firstName;
-    NSString *lastName = person.lastName;
-    if (isCapitalized) {
-        firstName = [firstName capitalizedString];
-        lastName = [lastName capitalizedString];
-    }
-    NSString *fullName = [firstName stringByAppendingString:@" "];
-    fullName = [fullName stringByAppendingString:lastName];
-    return fullName;
+- (void) getProfileImageRounded:(BOOL)isRounded border:(BOOL)isBorder {
+    PFFile *profileImageFile = self.user[@"profileImage"];
+    [profileImageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
+        if (!error) {
+            UIImage *profileImage = [UIImage imageWithData:imageData];
+            //Rounded settings. BOOL activates/deactivates.
+            self.profileImage.layer.cornerRadius = self.profileImage.frame.size.width / 15;
+            self.profileImage.clipsToBounds = isRounded;
+            //Border settings. BOOL activates/deactivates.
+            if (isBorder) {
+                [self.profileImage.layer setBorderColor:[[UIColor whiteColor] CGColor]];
+                [self.profileImage.layer setBorderWidth:5.0];
+            }
+            //Assign image
+            self.profileImage.image = profileImage;
+        }
+    }];
 }
 
 /*
@@ -93,4 +120,19 @@
 }
 */
 
+- (IBAction)gitHubButtonTapped:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.user[@"gitHubURL"]]];
+}
+
+- (IBAction)facebookButtonTapped:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.user[@"facebookURL"]]];
+}
+
+- (IBAction)twitterButtonTapped:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.user[@"twitterURL"]]];
+}
+
+- (IBAction)linkedInButtonTapped:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.user[@"linkedInURL"]]];
+}
 @end
