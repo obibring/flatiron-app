@@ -52,6 +52,204 @@
             </objects>
             <point key="canvasLocation" x="126" y="1103"/>
         </scene>
+        <!--Me-->
+        <scene sceneID="GC6-1p-xB5">
+            <objects>
+                <viewController title="Me" id="2lO-06-Vtm" customClass="MeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mER-D0-wex"/>
+                        <viewControllerLayoutGuide type="bottom" id="mkc-0G-JXU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Xfb-Kc-q59">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g3G-18-2V8">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="861"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZZu-QE-eGm">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Find me on" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6O-sv-Wbd">
+                                                <rect key="frame" x="16" y="177" width="200" height="25"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                                                <color key="textColor" red="0.270588249" green="0.63529413940000001" blue="0.8078432083" alpha="1" colorSpace="deviceRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8e7-gv-jMx">
+                                                <rect key="frame" x="16" y="210" width="30" height="30"/>
+                                                <state key="normal" backgroundImage="githubGray.png">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="gitHubButtonTapped:" destination="Tty-5R-agq" eventType="touchUpInside" id="5su-8w-ytn"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gaP-Tf-QeM">
+                                                <rect key="frame" x="16" y="286" width="30" height="30"/>
+                                                <state key="normal" backgroundImage="twitterGray.png">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="twitterButtonTapped:" destination="Tty-5R-agq" eventType="touchUpInside" id="7lM-t8-mwE"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j4v-BR-dYS">
+                                                <rect key="frame" x="16" y="248" width="30" height="30"/>
+                                                <state key="normal" backgroundImage="facebookGray.png">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="facebookButtonTapped:" destination="Tty-5R-agq" eventType="touchUpInside" id="LJW-SG-c7w"/>
+                                                </connections>
+                                            </button>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WxD-tw-0hM">
+                                                <rect key="frame" x="16" y="57" width="160" height="30"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qFD-dM-vcy">
+                                                <rect key="frame" x="16" y="95" width="160" height="30"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZJo-DP-Lwe">
+                                                <rect key="frame" x="184" y="57" width="160" height="30"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Flatiron Class" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="43v-2v-28X">
+                                                <rect key="frame" x="184" y="95" width="160" height="30"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Contact" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wru-HP-Kwj">
+                                                <rect key="frame" x="16" y="24" width="200" height="25"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                                                <color key="textColor" red="0.270588249" green="0.63529413940000001" blue="0.8078432083" alpha="1" colorSpace="deviceRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mobile" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EzE-uc-DUu">
+                                                <rect key="frame" x="16" y="133" width="160" height="30"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="GitHub handle" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YCd-RY-1vG">
+                                                <rect key="frame" x="141" y="210" width="203" height="30"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="github.com/" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ByM-05-JaJ">
+                                                <rect key="frame" x="60" y="214" width="73" height="21"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Facebook handle" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gFU-Qn-kr5">
+                                                <rect key="frame" x="162" y="248" width="182" height="30"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="facebook.com/" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Why-1B-uxN">
+                                                <rect key="frame" x="60" y="252" width="94" height="21"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="twitter.com/" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pYC-hC-NdZ">
+                                                <rect key="frame" x="60" y="290" width="73" height="21"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full LinkedIn URL" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BRa-b7-if4">
+                                                <rect key="frame" x="60" y="324" width="284" height="30"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O8e-wd-gkn">
+                                                <rect key="frame" x="16" y="324" width="30" height="30"/>
+                                                <state key="normal" backgroundImage="linkedinGray.png">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="linkedInButtonTapped:" destination="Tty-5R-agq" eventType="touchUpInside" id="Cyc-aq-W0P"/>
+                                                </connections>
+                                            </button>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="GitHub handle" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jLs-zU-ikL">
+                                                <rect key="frame" x="141" y="286" width="203" height="30"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Before Flatiron" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0P-RR-9Og">
+                                                <rect key="frame" x="16" y="374" width="200" height="25"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                                                <color key="textColor" red="0.270588249" green="0.63529413940000001" blue="0.8078432083" alpha="1" colorSpace="deviceRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vFK-1m-pOg">
+                                                <rect key="frame" x="16" y="407" width="328" height="113"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="After Flatiron" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qnu-Rs-3Yb">
+                                                <rect key="frame" x="16" y="539" width="200" height="25"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                                                <color key="textColor" red="0.270588249" green="0.63529413940000001" blue="0.8078432083" alpha="1" colorSpace="deviceRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G5r-TC-cXi">
+                                                <rect key="frame" x="16" y="572" width="328" height="113"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fun Fact" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kiR-2s-MdU">
+                                        <rect key="frame" x="16" y="695" width="200" height="25"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" red="0.270588249" green="0.63529413940000001" blue="0.8078432083" alpha="1" colorSpace="deviceRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6ec-dz-GQI">
+                                        <rect key="frame" x="16" y="728" width="328" height="113"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="SN5-zE-Iog"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="email" destination="qFD-dM-vcy" id="wLx-qV-K2T"/>
+                        <outlet property="facebookButton" destination="j4v-BR-dYS" id="JlY-E0-G3K"/>
+                        <outlet property="facebookHandle" destination="gFU-Qn-kr5" id="vxE-zN-HiP"/>
+                        <outlet property="firstName" destination="WxD-tw-0hM" id="7J7-Ku-j8h"/>
+                        <outlet property="gitHubButton" destination="8e7-gv-jMx" id="iVg-RG-G5F"/>
+                        <outlet property="gitHubHandle" destination="YCd-RY-1vG" id="A2i-Br-ujm"/>
+                        <outlet property="lastName" destination="ZJo-DP-Lwe" id="aIe-VF-Tcx"/>
+                        <outlet property="linkedInButton" destination="O8e-wd-gkn" id="ZUS-ok-f8f"/>
+                        <outlet property="linkedInURL" destination="BRa-b7-if4" id="idL-wA-v81"/>
+                        <outlet property="mobile" destination="EzE-uc-DUu" id="qkj-yc-yrm"/>
+                        <outlet property="program" destination="43v-2v-28X" id="b8g-Um-TuJ"/>
+                        <outlet property="twitterButton" destination="gaP-Tf-QeM" id="uA1-vJ-0r7"/>
+                        <outlet property="twitterHandle" destination="jLs-zU-ikL" id="j9X-bK-CzN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a1p-na-d9B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="385" y="-678"/>
+        </scene>
         <!--Community-->
         <scene sceneID="YAU-eV-5Zz">
             <objects>
@@ -342,6 +540,7 @@
                         <segue destination="wOB-Mt-nPq" kind="relationship" relationship="viewControllers" id="1Zc-ZU-XcN"/>
                         <segue destination="n3q-jf-eFE" kind="relationship" relationship="viewControllers" id="oMn-5V-PA9"/>
                         <segue destination="QHM-LW-Iu1" kind="relationship" relationship="viewControllers" id="ob1-ce-eBj"/>
+                        <segue destination="2lO-06-Vtm" kind="relationship" relationship="viewControllers" id="oZ5-6e-eiS"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Egg-N5-ZuS" userLabel="First Responder" sceneMemberID="firstResponder"/>
