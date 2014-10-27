@@ -10,7 +10,7 @@
 #import "AddEventDelegate.h"
 
 
-@interface AddEventViewController : UIViewController <UITextFieldDelegate>
+@interface AddEventViewController : UIViewController <UITextFieldDelegate, UIAlertViewDelegate>
 
 @property (strong, nonatomic) NSDate *defaultDatePickerDate;
 @property (weak, nonatomic) id <AddEventDelegate> delegate;

@@ -9,6 +9,7 @@
 
 #import "SACalendarCell.h"
 #import "SACalendarConstants.h"
+#import "Constants.h"
 
 @implementation SACalendarCell
 
@@ -53,7 +54,7 @@
         self.circleView = [[UIView alloc] initWithFrame:CGRectMake(origin.x, origin.y, length, length)];
        
         self.circleView.layer.cornerRadius = length / 2;
-        self.circleView.backgroundColor = currentDateCircleColor;
+        self.circleView.backgroundColor = flatironBlueLight;
         
         self.selectedView = [[UIView alloc] initWithFrame:CGRectMake(origin.x, origin.y, length, length)];
         

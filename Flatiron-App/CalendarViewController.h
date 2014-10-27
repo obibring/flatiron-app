@@ -10,6 +10,6 @@
 #import "AddEventDelegate.h"
 #import "SACalendar.h"
 
-@interface CalendarViewController : UIViewController <AddEventDelegate, SACalendarDelegate>
+@interface CalendarViewController : UIViewController <AddEventDelegate, SACalendarDelegate, UITableViewDelegate, UITableViewDataSource>
 
 @end

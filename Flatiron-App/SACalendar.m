@@ -13,6 +13,7 @@
 #import "DateUtil.h"
 #import "EventCalendarCell.h"
 #import <Parse/Parse.h>
+#import "Constants.h"
 
 @interface SACalendar () <UICollectionViewDataSource, UICollectionViewDelegate>{
     DMLazyScrollView* scrollView;
@@ -227,7 +228,7 @@
         monthLabel.font = [UIFont systemFontOfSize: desiredFontSize * headerFontRatio];
         monthLabel.textAlignment = NSTextAlignmentCenter;
         monthLabel.text = [NSString stringWithFormat:@"%@ %04i",[DateUtil getMonthString:month],year];
-        monthLabel.textColor = headerTextColor;
+        monthLabel.textColor = flatironBlueDark;
         
         [contr.view addSubview:monthLabel];
         [contr.view addSubview:calendar];
@@ -397,6 +398,7 @@
         cell.topLineView.hidden = cell.dateLabel.hidden = cell.circleView.hidden = cell.selectedView.hidden = cell.dotView.hidden = YES;
     }
     else{
+        cell.circleView.hidden = YES;
         cell.topLineView.hidden = cell.dateLabel.hidden = NO;
         
         // get appropriate font size
@@ -436,6 +438,7 @@
         }
         else{
             cell.selectedView.hidden = YES;
+            NSLog(@"IN BRANCH AND isToday is: %d", isToday);
             if (!isToday) {
                 cell.dateLabel.font = font;
                 cell.dateLabel.textColor = dateTextColor;
