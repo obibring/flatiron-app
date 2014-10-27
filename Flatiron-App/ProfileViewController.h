@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@class Person;
+@class PFUser;
 
 @interface ProfileViewController : UIViewController
 
-@property (strong, nonatomic) Person *person;
+@property (strong, nonatomic) PFUser *user;
 
 @end

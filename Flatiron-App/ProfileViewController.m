@@ -7,10 +7,7 @@
 //
 
 #import "ProfileViewController.h"
-#import "DataStore.h"
-#import "Person.h"
-#import "Program.h"
-#import "Image.h"
+#import <PFUser.h>
 
 @interface ProfileViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
@@ -21,15 +18,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *fun;
 @property (weak, nonatomic) IBOutlet UIButton *gitHubButton;
 
-
-
 @end
 
 @implementation ProfileViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     [self fillProfileInformation];
 }
 
@@ -39,49 +33,35 @@
 }
 
 - (void) fillProfileInformation {
-    Person *person = self.person;
-    [self setImageOfPerson:person rounded:YES border:YES];
-    self.name.text = [self getFullNameOf:person capitalized:YES];
-    self.program.text = person.program.name;
-    self.before.text = person.before;
-    self.after.text = person.after;
-    self.fun.text = person.fun;
+    //[self setImageOfPerson:person rounded:YES border:YES];
+    self.name.text = [self.title capitalizedString]; //The title of the view was set to the full name;
+    //self.program.text = self.user[@"program"];
+    self.before.text = self.user[@"beforeBio"];
+    self.after.text = self.user[@"afterBio"];
+    self.fun.text = self.user[@"funFact"];
     
 }
 
-- (void) setSocialIcons:(Person *)person {
-    UIImage *gitHubIcon = [UIImage imageNamed:@"github.png"];
-    [self.gitHubButton setImage:gitHubIcon forState:UIControlStateNormal];
-}
-
-
-- (void) setImageOfPerson:(Person *)person rounded:(BOOL)isRounded border:(BOOL)isBorder {
-    //Fetch image
-    UIImage *profileImage = [UIImage imageWithData:person.image.image];
-    //Rounded settings. BOOL activates/deactivates.
-    self.profileImage.layer.cornerRadius = self.profileImage.frame.size.width / 15;
-    self.profileImage.clipsToBounds = isRounded;
-    //Border settings. BOOL activates/deactivates.
-    if (isBorder) {
-        [self.profileImage.layer setBorderColor:[[UIColor whiteColor] CGColor]];
-        [self.profileImage.layer setBorderWidth:5.0];
-    }
-    //Assign image
-    self.profileImage.image = profileImage;
-}
-
-//Duplicate method from EveryoneTableViewController
-- (NSString *) getFullNameOf:(Person *)person capitalized:(BOOL)isCapitalized {
-    NSString *firstName = person.firstName;
-    NSString *lastName = person.lastName;
-    if (isCapitalized) {
-        firstName = [firstName capitalizedString];
-        lastName = [lastName capitalizedString];
-    }
-    NSString *fullName = [firstName stringByAppendingString:@" "];
-    fullName = [fullName stringByAppendingString:lastName];
-    return fullName;
-}
+//- (void) setSocialIcons:(Person *)person {
+//    UIImage *gitHubIcon = [UIImage imageNamed:@"github.png"];
+//    [self.gitHubButton setImage:gitHubIcon forState:UIControlStateNormal];
+//}
+//
+//
+//- (void) setImageOfPerson:(Person *)person rounded:(BOOL)isRounded border:(BOOL)isBorder {
+//    //Fetch image
+//    UIImage *profileImage = [UIImage imageWithData:person.image.image];
+//    //Rounded settings. BOOL activates/deactivates.
+//    self.profileImage.layer.cornerRadius = self.profileImage.frame.size.width / 15;
+//    self.profileImage.clipsToBounds = isRounded;
+//    //Border settings. BOOL activates/deactivates.
+//    if (isBorder) {
+//        [self.profileImage.layer setBorderColor:[[UIColor whiteColor] CGColor]];
+//        [self.profileImage.layer setBorderWidth:5.0];
+//    }
+//    //Assign image
+//    self.profileImage.image = profileImage;
+//}
 
 /*
 #pragma mark - Navigation

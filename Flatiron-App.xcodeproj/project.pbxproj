@@ -31,10 +31,6 @@
 		CB312F4819FC4157009EFEA9 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CB312F4619FC4157009EFEA9 /* Model.xcdatamodeld */; };
 		CB312F5C19FC4B69009EFEA9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB312F5B19FC4B69009EFEA9 /* CoreData.framework */; };
 		CB312F6319FC5ECA009EFEA9 /* professional-profiles.png in Resources */ = {isa = PBXBuildFile; fileRef = CB312F6219FC5ECA009EFEA9 /* professional-profiles.png */; };
-		CB312F7619FC6B15009EFEA9 /* DataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = CB312F7419FC6B15009EFEA9 /* DataStore.m */; };
-		CB312F7C19FC8F2A009EFEA9 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = CB312F7B19FC8F2A009EFEA9 /* Person.m */; };
-		CB312F7F19FC8F2A009EFEA9 /* Program.m in Sources */ = {isa = PBXBuildFile; fileRef = CB312F7E19FC8F2A009EFEA9 /* Program.m */; };
-		CB312F8219FC8F2A009EFEA9 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = CB312F8119FC8F2A009EFEA9 /* Image.m */; };
 		CB312F8F19FD674D009EFEA9 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = CB312F8A19FD674D009EFEA9 /* facebook.png */; };
 		CB312F9019FD674D009EFEA9 /* github.png in Resources */ = {isa = PBXBuildFile; fileRef = CB312F8B19FD674D009EFEA9 /* github.png */; };
 		CB312F9119FD674D009EFEA9 /* google_plus.png in Resources */ = {isa = PBXBuildFile; fileRef = CB312F8C19FD674D009EFEA9 /* google_plus.png */; };
@@ -101,14 +97,6 @@
 		CB312F4719FC4157009EFEA9 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		CB312F5B19FC4B69009EFEA9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		CB312F6219FC5ECA009EFEA9 /* professional-profiles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "professional-profiles.png"; sourceTree = SOURCE_ROOT; };
-		CB312F7419FC6B15009EFEA9 /* DataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataStore.m; sourceTree = "<group>"; };
-		CB312F7519FC6B15009EFEA9 /* DataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataStore.h; sourceTree = "<group>"; };
-		CB312F7A19FC8F2A009EFEA9 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
-		CB312F7B19FC8F2A009EFEA9 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
-		CB312F7D19FC8F2A009EFEA9 /* Program.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Program.h; sourceTree = "<group>"; };
-		CB312F7E19FC8F2A009EFEA9 /* Program.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Program.m; sourceTree = "<group>"; };
-		CB312F8019FC8F2A009EFEA9 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
-		CB312F8119FC8F2A009EFEA9 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
 		CB312F8A19FD674D009EFEA9 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
 		CB312F8B19FD674D009EFEA9 /* github.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = github.png; sourceTree = "<group>"; };
 		CB312F8C19FD674D009EFEA9 /* google_plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = google_plus.png; sourceTree = "<group>"; };
@@ -281,14 +269,6 @@
 			isa = PBXGroup;
 			children = (
 				CB312F4619FC4157009EFEA9 /* Model.xcdatamodeld */,
-				CB312F8019FC8F2A009EFEA9 /* Image.h */,
-				CB312F8119FC8F2A009EFEA9 /* Image.m */,
-				CB312F7D19FC8F2A009EFEA9 /* Program.h */,
-				CB312F7E19FC8F2A009EFEA9 /* Program.m */,
-				CB312F7A19FC8F2A009EFEA9 /* Person.h */,
-				CB312F7B19FC8F2A009EFEA9 /* Person.m */,
-				CB312F7419FC6B15009EFEA9 /* DataStore.m */,
-				CB312F7519FC6B15009EFEA9 /* DataStore.h */,
 				CB312F5B19FC4B69009EFEA9 /* CoreData.framework */,
 			);
 			name = "Core Data";
@@ -459,10 +439,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB312F7619FC6B15009EFEA9 /* DataStore.m in Sources */,
 				A3909D4D19FD8BF100C640E2 /* DateUtil.m in Sources */,
-				CB312F7F19FC8F2A009EFEA9 /* Program.m in Sources */,
-				CB312F7C19FC8F2A009EFEA9 /* Person.m in Sources */,
 				A31A078A19FC023700017DA9 /* AppDelegate.m in Sources */,
 				A3909D5019FD9A2500C640E2 /* OnboardingViewController.m in Sources */,
 				A31A07AC19FC090100017DA9 /* ProfileViewController.m in Sources */,
@@ -472,7 +449,6 @@
 				A3909D4219FD89F200C640E2 /* DMLazyScrollView.m in Sources */,
 				A31A078719FC023700017DA9 /* main.m in Sources */,
 				A31A07B319FC0DE800017DA9 /* CalendarViewController.m in Sources */,
-				CB312F8219FC8F2A009EFEA9 /* Image.m in Sources */,
 				A3909D5319FD9C5800C640E2 /* LoginViewController.m in Sources */,
 				A31A07B619FC0EB300017DA9 /* AlertsTableTableViewController.m in Sources */,
 				A31A07B019FC0A1200017DA9 /* EveryoneTableTableViewController.m in Sources */,
