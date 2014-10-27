@@ -13,16 +13,16 @@
 
 @interface Person : NSManagedObject
 
-@property (nonatomic, retain) NSString * after;
-@property (nonatomic, retain) NSString * before;
-@property (nonatomic, retain) NSString * facebookURL;
-@property (nonatomic, retain) NSString * firstName;
+@property (nonatomic, retain) NSString * after;//
+@property (nonatomic, retain) NSString * before;//
+@property (nonatomic, retain) NSString * facebookURL;//
+@property (nonatomic, retain) NSString * firstName;//
 @property (nonatomic, retain) NSString * fun;
-@property (nonatomic, retain) NSString * gitHubURL;
-@property (nonatomic, retain) NSString * lastName;
-@property (nonatomic, retain) NSString * linkedInURL;
+@property (nonatomic, retain) NSString * gitHubURL;//
+@property (nonatomic, retain) NSString * lastName;//
+@property (nonatomic, retain) NSString * linkedInURL;//
 @property (nonatomic, retain) NSString * quote;
-@property (nonatomic, retain) NSString * role;
+@property (nonatomic, retain) NSString * role;//
 @property (nonatomic, retain) NSString * twitterURL;
 @property (nonatomic, retain) Image *image;
 @property (nonatomic, retain) Program *program;

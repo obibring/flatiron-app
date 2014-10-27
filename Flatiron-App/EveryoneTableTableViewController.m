@@ -11,6 +11,7 @@
 #import "DataStore.h"
 #import "Person.h"
 #import "Image.h"
+#import <Parse/Parse.h>
 
 @interface EveryoneTableTableViewController ()
 
@@ -22,13 +23,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.dataStore = [DataStore sharedDataStore];
-    [self.dataStore fetchData];
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self updateTestData];
+//    self.dataStore = [DataStore sharedDataStore];
+//    [self.dataStore fetchData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,7 +44,8 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return [self.dataStore.persons count];
+    return 1;
+//    return [self.dataStore.persons count];
 }
 
 
@@ -55,13 +53,13 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"basicCell" forIndexPath:indexPath];
     
     // Configure the cell...
-    Person *person = self.dataStore.persons[indexPath.row];
-    NSString *fullName = [self getFullNameOf:person];
-    UIImage *profileImage = [self getImageOf:person];
-    cell.imageView.image = profileImage;
-    cell.imageView.layer.cornerRadius = cell.imageView.frame.size.width / 2;
-    cell.imageView.clipsToBounds = YES;
-    cell.textLabel.text = fullName;
+//    Person *person = self.dataStore.persons[indexPath.row];
+//    NSString *fullName = [self getFullNameOf:person];
+//    UIImage *profileImage = [self getImageOf:person];
+//    cell.imageView.image = profileImage;
+//    cell.imageView.layer.cornerRadius = cell.imageView.frame.size.width / 2;
+//    cell.imageView.clipsToBounds = YES;
+//    cell.textLabel.text = fullName;
     return cell;
 }
 
@@ -76,6 +74,47 @@
     return [UIImage imageWithData:person.image.image];
     
 }
+
+- (void) updateTestData {
+    
+    
+    PFQuery *query = [PFUser query];
+    [query willChangeValueForKey:(NSString *)
+    // The InBackground methods are asynchronous, so any code after this will run
+    // immediately.  Any code that depends on the query result should be moved
+    // inside the completion block above.
+    
+    
+    //Create Orr basic info
+    PFUser *orrBibring = [PFUser user];
+    orrBibring.username = @"orrBibring";
+    orrBibring.password = @"1234";
+    orrBibring.email = @"orrbibring@flatironschool.com";
+    orrBibring[@"firstName"] = @"Orr";
+    orrBibring[@"lastName"] = @"Bibring";
+    orrBibring[@"role"] = @"Student";
+    orrBibring[@"beforeBio"] = @"Developer at CrowdTwist";
+    orrBibring[@"afterBio"] = @"Looking to start my own app company.";
+    orrBibring[@"funFact"] = @"Big Rick Ross fan.";
+    orrBibring[@"gitHubURL"] = @"https://github.com/obibring";
+    NSLog(@"HERE");
+
+    //Add a profile picture and associate to Orr
+    UIImage *orrBibringImage = [UIImage imageNamed:@"orrBibring.png"];
+    NSData *data = UIImagePNGRepresentation(orrBibringImage);
+    PFFile *image = [PFFile fileWithName:@"image.png" data:data];
+    [image saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        orrBibring[@"profileImage"] = image;
+        //Save to Parse
+        [orrBibring saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (error) {
+                NSLog(@"UNABLE TO SAVE ORR TO DB. ERROR: %@", error);
+            }
+        }];
+    }];
+    
+}
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -111,7 +150,7 @@
 }
 */
 
-
+/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -124,6 +163,6 @@
     profileVC.title = [self getFullNameOf:person];
     profileVC.person = person;
 }
-
+*/
 
 @end
