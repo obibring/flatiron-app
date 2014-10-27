@@ -26,7 +26,8 @@
     if (self) {
         
         self.backgroundColor = cellBackgroundColor;
-        
+       
+        self.dotView = [[UIView alloc] init];
         self.topLineView = [[UIView alloc]initWithFrame:CGRectMake(-1, 0, frame.size.width + 2, 1)];
         self.topLineView.backgroundColor = cellTopLineColor;
         
@@ -50,7 +51,7 @@
         }
         
         self.circleView = [[UIView alloc] initWithFrame:CGRectMake(origin.x, origin.y, length, length)];
-        
+       
         self.circleView.layer.cornerRadius = length / 2;
         self.circleView.backgroundColor = currentDateCircleColor;
         
@@ -64,8 +65,18 @@
         [self.viewForBaselineLayout addSubview:self.selectedView];
         [self.viewForBaselineLayout addSubview:self.dateLabel];
         
+        UIView *dotView = [self drawDotWithOriginX:(origin.x + (length /2)) originY:(origin.y + length + 4) color:[UIColor blackColor]];
+        
+        if (dotView) {
+            [self.viewForBaselineLayout addSubview:dotView];
+        }
+        
     }
     return self;
+}
+
+-(UIView *)drawDotWithOriginX:(NSInteger)originX originY:(NSInteger)originY color:(UIColor *)color {
+    return nil;
 }
 
 

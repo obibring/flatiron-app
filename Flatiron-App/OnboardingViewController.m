@@ -7,6 +7,7 @@
 //
 
 #import "OnboardingViewController.h"
+#import "LoginViewController.h"
 #import <Parse/Parse.h>
 
 @interface OnboardingViewController () 
@@ -21,9 +22,28 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated {
-    PFLogInViewController *loginVc = [[PFLogInViewController alloc] init];
+    LoginViewController *loginVc = [[LoginViewController alloc] init];
     [self presentViewController:loginVc animated:YES completion:nil];
     loginVc.delegate = self;
+    loginVc.signUpController.delegate = self;
+}
+
+-(void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
+   // The user successfully registered, so show the tab controller.
+    [self userDidBecomeAuthenticated];
+}
+
+-(void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user {
+   // The user successfully registered, so show the tab controller.
+    [self userDidBecomeAuthenticated];
+}
+
+-(void)signUpViewController:(PFSignUpViewController *)signUpController didFailToSignUpWithError:(NSError *)error {
+    NSLog(@"%@", error);
+}
+
+-(void)userDidBecomeAuthenticated {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"login" object:[PFUser currentUser] userInfo:nil];
 }
 
 - (void)didReceiveMemoryWarning {

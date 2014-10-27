@@ -5,6 +5,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 target "Flatiron-App" do
     pod 'Parse'
+    pod 'PromiseKit'
 end
 
 target "Flatiron-AppTests" do

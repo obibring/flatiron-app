@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "AddEventDelegate.h"
+#import "SACalendar.h"
 
-@interface CalendarViewController : UIViewController <AddEventDelegate>
+@interface CalendarViewController : UIViewController <AddEventDelegate, SACalendarDelegate>
 
 @end

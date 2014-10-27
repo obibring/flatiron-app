@@ -16,14 +16,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.view.backgroundColor = [UIColor whiteColor];
+    self.logInView.logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"flatiron-logo-resized"]];
+    self.logInView.signUpButton.backgroundColor = [UIColor colorWithRed:41 green:184 blue:255 alpha:1.0];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 /*
 #pragma mark - Navigation

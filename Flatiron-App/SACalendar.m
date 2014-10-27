@@ -11,6 +11,8 @@
 #import "SACalendarCell.h"
 #import "DMLazyScrollView.h"
 #import "DateUtil.h"
+#import "EventCalendarCell.h"
+#import <Parse/Parse.h>
 
 @interface SACalendar () <UICollectionViewDataSource, UICollectionViewDelegate>{
     DMLazyScrollView* scrollView;
@@ -33,6 +35,8 @@
     
     int selectedRow;
     int headerSize;
+    
+    NSMutableDictionary *eventsHashedByStartDate;
 }
 
 @end
@@ -63,7 +67,8 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        
+       
+        eventsHashedByStartDate = [[NSMutableDictionary alloc] init];
         controllers = [NSMutableDictionary dictionary];
         calendars = [NSMutableDictionary dictionary];
         monthLabels = [NSMutableDictionary dictionary];
@@ -114,7 +119,7 @@
 }
 
 
-#pragma SCROLL VIEW DELEGATE
+#pragma mark - SCROLL VIEW DELEGATE
 
 - (UIViewController *) controllerAtIndex:(NSInteger) index {
     /*
@@ -208,6 +213,7 @@
         calendar.delegate = self;
         calendar.scrollEnabled = NO;
         [calendar registerClass:[SACalendarCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
+        [calendar registerClass:[EventCalendarCell class] forCellWithReuseIdentifier:@"eventCellIdentifier"];
         [calendar setBackgroundColor:calendarBackgroundColor];
         calendar.tag = index;
         
@@ -290,7 +296,7 @@
     }
 }
 
-#pragma COLLECTION VIEW DELEGATE
+#pragma mark - COLLECTION VIEW DELEGATE
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
@@ -305,28 +311,93 @@
     return MAX_CELL;
 }
 
+// Returns a has key for a specific date
+-(NSString *)hashKeyForEvent:(PFObject *)event {
+    return [self hashKeyForDate:event[@"startDate"]];
+}
+
+-(NSString *)hashKeyForDate:(NSDate *)date {
+    NSCalendar *gregorian = [[NSCalendar alloc]
+                             initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSDateComponents *components = [gregorian components:(NSCalendarUnitYear | NSCalendarUnitDay | NSCalendarUnitMonth) fromDate:date];
+    return [self hashKeyForDay:[components day] month:[components month] year:[components year]];
+}
+
+-(NSString *)hashKeyForDay:(NSInteger)day month:(NSInteger)mon year:(NSInteger)yr {
+    return [NSString stringWithFormat:@"%d%d%d", day, mon, yr];
+}
+
+-(void)setEvents:(NSArray *)events {
+    _events = events;
+    [eventsHashedByStartDate removeAllObjects];
+    
+    for (PFObject *event in events) {
+        
+        // Get the has key for this event using its start date
+        NSString *key = [self hashKeyForEvent:event];
+        
+        if (eventsHashedByStartDate[key]) {
+            [((NSMutableArray *)eventsHashedByStartDate[key]) addObject:event];
+        } else {
+            eventsHashedByStartDate[key] = [NSMutableArray arrayWithObjects:event, nil];
+        }
+    }
+   
+    NSLog(@"Previous Index: %li", (long)previousIndex);
+//    UICollectionView *calendar = [calendars objectForKey:[NSString stringWithFormat:@"%li",(long)previousIndex]];
+    for (NSString *key in calendars) {
+        [calendars[key] reloadData];
+    }
+}
+
 /**
  *  Controls what gets displayed in each cell
  *  Edit this function for customized calendar logic
  */
+-(NSArray *)eventsForDate:(NSDate *)date {
+    NSArray *events = eventsHashedByStartDate[[self hashKeyForDate:date]];
+    return events ? events : @[];
+}
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    SACalendarCell *cell=[collectionView dequeueReusableCellWithReuseIdentifier:@"cellIdentifier" forIndexPath:indexPath];
     
     int monthToLoad = [self monthToLoad:(int)collectionView.tag];
     int yearToLoad = [self yearToLoad:(int)collectionView.tag];
-    
+
     // number of days in the month we are loading
     int daysInMonth = (int)[DateUtil getDaysInMonth:monthToLoad year:yearToLoad];
+
+    NSString *hashForEvents;
+    int dayOfMonth;
+    
+    if (indexPath.row < firstDay || indexPath.row >= firstDay + daysInMonth) {
+        // Don't calculate the hash if the date isn't one that belongs to the month being displayed.
+    } else {
+        dayOfMonth = indexPath.row - firstDay + 1;
+        hashForEvents = [self hashKeyForDay:dayOfMonth month:monthToLoad year:yearToLoad];
+    }
+    
+    NSInteger eventCount = 0;
+    
+    if (hashForEvents) {
+        eventCount = [((NSArray *)eventsHashedByStartDate[hashForEvents]) count];
+    }
+    
+    SACalendarCell *cell;
+    
+    if (eventCount > 0) {
+        cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"eventCellIdentifier" forIndexPath:indexPath];
+    } else {
+        cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellIdentifier" forIndexPath:indexPath];
+    }
     
     // if cell is out of the month, do not show
     if (indexPath.row < firstDay || indexPath.row >= firstDay + daysInMonth) {
-        cell.topLineView.hidden = cell.dateLabel.hidden = cell.circleView.hidden = cell.selectedView.hidden = YES;
+        cell.topLineView.hidden = cell.dateLabel.hidden = cell.circleView.hidden = cell.selectedView.hidden = cell.dotView.hidden = YES;
     }
     else{
         cell.topLineView.hidden = cell.dateLabel.hidden = NO;
-        cell.circleView.hidden = YES;
         
         // get appropriate font size
         NSString *string = @"STRING";
@@ -338,7 +409,6 @@
         
         UIFont *font = cellFont;
         UIFont *boldFont = cellBoldFont;
-        
         // if the cell is the current date, display the red circle
         BOOL isToday = NO;
         if (indexPath.row - firstDay + 1 == current_date

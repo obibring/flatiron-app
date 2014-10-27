@@ -12,7 +12,7 @@
 
 @interface AddEventViewController : UIViewController <UITextFieldDelegate>
 
-@property (strong, nonatomic) NSDate *dateOfEvent;
+@property (strong, nonatomic) NSDate *defaultDatePickerDate;
 @property (weak, nonatomic) id <AddEventDelegate> delegate;
 
 @end

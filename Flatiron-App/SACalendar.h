@@ -14,6 +14,7 @@
 @interface SACalendar : UIView
 
 @property (nonatomic, weak) id<SACalendarDelegate> delegate;
+@property (nonatomic, strong) NSArray *events;
 
 /**
  *  Default constructor. Calendar will begin at current month

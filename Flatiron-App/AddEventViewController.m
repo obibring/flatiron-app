@@ -7,6 +7,8 @@
 //
 
 #import "AddEventViewController.h"
+#import <Parse/Parse.h>
+
 #define leftPadding 5
 
 @interface AddEventViewController ()
@@ -46,16 +48,19 @@
     self.startDatePicker = [[UIDatePicker alloc] init];
     self.endDatePicker = [[UIDatePicker alloc] init];
     
+    // Set the default starting date for the start date picker
+    self.startDatePicker.date = self.defaultDatePickerDate;
+    self.endDatePicker.date = [self.defaultDatePickerDate dateByAddingTimeInterval:60*60];
+    
     // Make sure the end date picker is never before the start date
     self.endDatePicker.minimumDate = self.startDatePicker.date;
     
-//    self.startDatePicker.translatesAutoresizingMaskIntoConstraints = NO;
 //    self.endDatePicker.translatesAutoresizingMaskIntoConstraints = NO;
     
-    self.startDateInput.inputView = self.startDatePicker;
-//    self.startDateInput.inputAccessoryView = self.startDatePicker;
-    self.endDateInput.inputView = self.endDatePicker;
-//    self.endDateInput.inputAccessoryView = self.endDatePicker;
+//    self.startDateInput.inputView = self.startDatePicker;
+    self.startDateInput.inputAccessoryView = self.startDatePicker;
+//    self.endDateInput.inputView = self.endDatePicker;
+    self.endDateInput.inputAccessoryView = self.endDatePicker;
     
     // Set delegates
     self.startDateInput.delegate = self;
@@ -73,7 +78,12 @@
 #pragma mark - actions
 
 - (IBAction)save:(id)sender {
-    [self.delegate addEventViewControllerDidSave:self];
+    PFObject *event = [PFObject objectWithClassName:@"Event"];
+    event[@"startDate"] = self.startDatePicker.date;
+    event[@"endDate"] = self.endDatePicker.date;
+    event[@"title"] = self.titleInput.text;
+    [event saveInBackground];
+    [self.delegate addEventViewController:self didSaveEvent:event];
 }
 
 - (IBAction)cancel:(id)sender {
@@ -81,6 +91,7 @@
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    NSLog(@"TOUCHES BEGAN");
     [self.view endEditing:YES];
 }
 
@@ -92,7 +103,16 @@
     } else if (textField == self.endDateInput) {
         self.endDateInput.text = [self formatDate:self.endDatePicker.date];
     }
-    [self checkIfNeedsEnablingAndEnableSaveButton];
+    [self checkIfNeedsEnablingAndEnableSaveButtonWithStartDate:self.startDatePicker.date
+                                                       endDate:self.endDatePicker.date
+                                                         title:self.titleInput.text];
+}
+
+-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    [self checkIfNeedsEnablingAndEnableSaveButtonWithStartDate:self.startDatePicker.date
+                                                       endDate:self.endDatePicker.date
+                                                         title:string];
+    return YES;
 }
 
 #pragma mark - utilities
@@ -105,20 +125,16 @@
 }
 
 // Checks whether the save button should be enabled, and if so, enables it.
--(void)checkIfNeedsEnablingAndEnableSaveButton {
-    self.saveButton.enabled = [self formIsValid];
+-(void)checkIfNeedsEnablingAndEnableSaveButtonWithStartDate:(NSDate *)start endDate:(NSDate *)end title:(NSString *)title {
+    self.saveButton.enabled = [self formIsValidWithStartDate:start endDate:end title:title];
 }
 
--(BOOL)formIsValid {
-    NSDate *start = self.startDatePicker.date;
-    NSDate *end = self.endDatePicker.date;
-    NSString *title = self.titleInput.text;
-    
+-(BOOL)formIsValidWithStartDate:(NSDate *)start endDate:(NSDate *)end title:(NSString *)title {
     if (!start || !end) { // Must Exist
         return NO;
     } else if ([start compare:end] != NSOrderedAscending) { // Must be in order
         return NO;
-    } else if (!title || [title length] < 1) {
+    } else if (!title || [title length] == 0) {
         return NO;
     }
     

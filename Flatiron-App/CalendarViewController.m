@@ -9,10 +9,13 @@
 #import "CalendarViewController.h"
 #import "AddEventViewController.h"
 #import "SACalendar.h"
+#import <Parse/Parse.h>
 
 @interface CalendarViewController () <SACalendarDelegate>
 @property (weak, nonatomic) IBOutlet UIView *calendarContainerView;
 @property (strong, nonatomic) NSDate *selectedDate;
+@property (strong, nonatomic) NSMutableArray *events;
+@property (strong, nonatomic) SACalendar *calendar;
 @end
 
 @implementation CalendarViewController
@@ -23,44 +26,34 @@
     // the width of the screen and half the height.
     CGSize screenDimensions = [UIScreen mainScreen].bounds.size;
     CGRect calendarFrame = CGRectMake(0, 0, screenDimensions.width, parent.frame.size.height);
-    SACalendar *calendar = [[SACalendar alloc] initWithFrame:calendarFrame];
-    [self.calendarContainerView addSubview:calendar];
-    calendar.delegate = self;
+    self.calendar = [[SACalendar alloc] initWithFrame:calendarFrame];
+    [self.calendarContainerView addSubview:self.calendar];
+    self.calendar.delegate = self;
 }
 
 
+-(void)SACalendar:(SACalendar *)calendar didDisplayCalendarForMonth:(int)month year:(int)year {
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self loadAllEvents];
     
     // When the calendar first loads, set the selected date to today.
     self.selectedDate = [NSDate date];
 
     // Add the calendar onto the screen
     [self addCalendarToView];
+}
 
-    // Create the CALAgendaViewController
-//    SACalendar *calendar = [[SACalendar alloc] initWithFrame:self.calendarViewContainer.frame];
-    
-//    [self.calendarViewContainer addSubview:calendar];
-    
-//    self.calVc = [CALAgendaViewController new];
-//    self.calVc.agendaDelegate = self;
-//    
-//    // Set the start and end dates to be displayed in the calendar.
-//    [self.calVc setFromDate:[[self class] firstDayOfCurrentMonth]];
-//    [self.calVc setToDate:[[self class] lastDayOfCurrentMonth]];
-//    
-//    self.calVc.dayStyle = CALDayCollectionViewCellDayUIStyleIOS7;
-//    self.calVc.events = @[];
-//    self.calVc.calendarScrollDirection = UICollectionViewScrollDirectionHorizontal;
-//    
-//    self.calVc.view.frame = self.calContainer.frame;
-//    
-//    [self addChildViewController:self.calVc];
-//    [self.calVc didMoveToParentViewController:self];
-//    
-//    [self.calContainer addSubview:self.calVc.view];
+-(void)loadAllEvents {
+    PFQuery *query = [PFQuery queryWithClassName:@"Event"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        NSLog(@"RETRIEVED EVENTS FROM PARSE: %@", objects);
+        self.calendar.events = objects;
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -73,7 +66,7 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     AddEventViewController *addVc = segue.destinationViewController;
-    addVc.dateOfEvent = self.selectedDate;
+    addVc.defaultDatePickerDate = self.selectedDate;
     addVc.delegate = self;
 }
 
@@ -94,13 +87,9 @@
     NSLog(@"setting selected date to: %@", self.selectedDate);
 }
 
--(void)SACalendar:(SACalendar *)calendar didDisplayCalendarForMonth:(int)month year:(int)year {
-    
-}
-
 #pragma mark - AddEventDelegate
 
--(void)addEventViewControllerDidSave:(id)addEventViewController {
+-(void)addEventViewController:(id)addEventViewController didSaveEvent:(PFObject *)event{
     
 }
 

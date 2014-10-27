@@ -26,6 +26,8 @@
  */
 @property UIView *selectedView;
 
+@property UIView *dotView;
+
 /**
  *  the label showing the cell's date
  */

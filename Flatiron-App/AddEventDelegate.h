@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Parse/Parse.h>
 
 @class AddEventViewController;
 
 @protocol AddEventDelegate
 @required
--(void)addEventViewControllerDidSave:(AddEventViewController *)addEventViewController;
+-(void)addEventViewController:(AddEventViewController *)addEventViewController didSaveEvent:(PFObject *)event;
 -(void)addEventViewControllerDidCancel:(AddEventViewController *)addEventViewController;
 @end
