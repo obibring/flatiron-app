@@ -26,7 +26,6 @@
 		A3909D5319FD9C5800C640E2 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3909D5219FD9C5800C640E2 /* LoginViewController.m */; };
 		A3909D5919FD9F4000C640E2 /* flatiron-logo-resized.png in Resources */ = {isa = PBXBuildFile; fileRef = A3909D5819FD9F4000C640E2 /* flatiron-logo-resized.png */; };
 		A3909D5F19FDCF2600C640E2 /* EventCalendarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A3909D5E19FDCF2600C640E2 /* EventCalendarCell.m */; };
-		A3909D6719FECE1200C640E2 /* EventDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3909D6619FECE1200C640E2 /* EventDetailViewController.m */; };
 		B4820A4E0261E8D463ECB1B9 /* libPods-Flatiron-App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 542557DF3D518B20213FD004 /* libPods-Flatiron-App.a */; };
 		CB312F4219FC26CD009EFEA9 /* Steve-Carell-Brick-Tamland-Anchorman.png in Resources */ = {isa = PBXBuildFile; fileRef = CB312F4119FC26CD009EFEA9 /* Steve-Carell-Brick-Tamland-Anchorman.png */; };
 		CB312F4419FC3A24009EFEA9 /* edit.png in Resources */ = {isa = PBXBuildFile; fileRef = CB312F4319FC3A24009EFEA9 /* edit.png */; };
@@ -101,8 +100,6 @@
 		A3909D5D19FDCF2600C640E2 /* EventCalendarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventCalendarCell.h; sourceTree = "<group>"; };
 		A3909D5E19FDCF2600C640E2 /* EventCalendarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventCalendarCell.m; sourceTree = "<group>"; };
 		A3909D6419FEC9BB00C640E2 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
-		A3909D6519FECE1200C640E2 /* EventDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDetailViewController.h; sourceTree = "<group>"; };
-		A3909D6619FECE1200C640E2 /* EventDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDetailViewController.m; sourceTree = "<group>"; };
 		CB312F4119FC26CD009EFEA9 /* Steve-Carell-Brick-Tamland-Anchorman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Steve-Carell-Brick-Tamland-Anchorman.png"; sourceTree = "<group>"; };
 		CB312F4319FC3A24009EFEA9 /* edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit.png; sourceTree = "<group>"; };
 		CB312F4719FC4157009EFEA9 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -247,8 +244,6 @@
 				A3909D4F19FD9A2500C640E2 /* OnboardingViewController.m */,
 				A3909D5119FD9C5800C640E2 /* LoginViewController.h */,
 				A3909D5219FD9C5800C640E2 /* LoginViewController.m */,
-				A3909D6519FECE1200C640E2 /* EventDetailViewController.h */,
-				A3909D6619FECE1200C640E2 /* EventDetailViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -477,7 +472,6 @@
 				CB312F7C19FC8F2A009EFEA9 /* Person.m in Sources */,
 				A31A078A19FC023700017DA9 /* AppDelegate.m in Sources */,
 				A3909D5019FD9A2500C640E2 /* OnboardingViewController.m in Sources */,
-				A3909D6719FECE1200C640E2 /* EventDetailViewController.m in Sources */,
 				A31A07AC19FC090100017DA9 /* ProfileViewController.m in Sources */,
 				A3909D4819FD8A0000C640E2 /* SACalendar.m in Sources */,
 				A3909D3E19FD89E400C640E2 /* AddEventViewController.m in Sources */,
