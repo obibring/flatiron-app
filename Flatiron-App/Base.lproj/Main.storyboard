@@ -155,7 +155,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aHC-3V-bmE">
-                                <rect key="frame" x="16" y="210" width="161" height="20"/>
+                                <rect key="frame" x="16" y="210" width="214" height="20"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -203,17 +203,14 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="usz-su-ZVD">
                                 <rect key="frame" x="20" y="45" width="100" height="100"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mobile" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvy-i8-1Ei">
-                                <rect key="frame" x="182" y="210" width="161" height="20"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C1z-c1-W4I">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C1z-c1-W4I">
                                 <rect key="frame" x="166" y="270" width="30" height="30"/>
-                                <state key="normal" title="in">
+                                <state key="normal" backgroundImage="linkedinGray.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="linkedInButtonTapped:" destination="Tty-5R-agq" eventType="touchUpInside" id="tyq-ZT-pa8"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UXq-XB-wTh">
                                 <rect key="frame" x="216" y="270" width="30" height="30"/>
@@ -223,21 +220,30 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="edy-Xa-d1i">
                                 <rect key="frame" x="16" y="270" width="30" height="30"/>
-                                <state key="normal" backgroundImage="github.png">
+                                <state key="normal" backgroundImage="githubGray.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="gitHubButtonTapped:" destination="Tty-5R-agq" eventType="touchUpInside" id="6dT-q9-Nnn"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oGQ-PU-L4b">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oGQ-PU-L4b">
                                 <rect key="frame" x="116" y="270" width="30" height="30"/>
-                                <state key="normal" title="t">
+                                <state key="normal" backgroundImage="twitterGray.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="twitterButtonTapped:" destination="Tty-5R-agq" eventType="touchUpInside" id="h0z-nJ-8wJ"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vWh-Vz-Ghp">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vWh-Vz-Ghp">
                                 <rect key="frame" x="66" y="270" width="30" height="30"/>
-                                <state key="normal" title="f">
+                                <state key="normal" backgroundImage="facebookGray.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="facebookButtonTapped:" destination="Tty-5R-agq" eventType="touchUpInside" id="jtS-Li-Ke6"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N1g-Ld-A2S">
                                 <rect key="frame" x="266" y="270" width="30" height="30"/>
@@ -245,6 +251,12 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="+ 1 (917) 855-4390" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vfS-5J-x3S">
+                                <rect key="frame" x="238" y="210" width="121" height="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -255,11 +267,16 @@
                     <connections>
                         <outlet property="after" destination="UxJ-Yv-Sjl" id="2Cq-fD-76W"/>
                         <outlet property="before" destination="gHe-Te-xuh" id="lXK-VD-s8P"/>
+                        <outlet property="cellNumber" destination="vfS-5J-x3S" id="WuC-z0-owm"/>
+                        <outlet property="email" destination="aHC-3V-bmE" id="4bt-XU-1pQ"/>
+                        <outlet property="facebookButton" destination="vWh-Vz-Ghp" id="5uc-Ax-OfT"/>
                         <outlet property="fun" destination="3zj-wa-YXK" id="ZIf-IY-Was"/>
                         <outlet property="gitHubButton" destination="edy-Xa-d1i" id="57U-Ed-tqM"/>
+                        <outlet property="linkedInButton" destination="C1z-c1-W4I" id="06i-KR-DnQ"/>
                         <outlet property="name" destination="otV-2B-umG" id="T4z-dt-LTd"/>
                         <outlet property="profileImage" destination="usz-su-ZVD" id="tUB-3r-oS7"/>
                         <outlet property="program" destination="E54-2J-qSw" id="LdR-z1-qBS"/>
+                        <outlet property="twitterButton" destination="oGQ-PU-L4b" id="d3N-Kz-l1G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cqR-ZB-sjw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -422,6 +439,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="github.png" width="64" height="64"/>
+        <image name="facebookGray.png" width="64" height="64"/>
+        <image name="githubGray.png" width="64" height="64"/>
+        <image name="linkedinGray.png" width="64" height="64"/>
+        <image name="twitterGray.png" width="64" height="64"/>
     </resources>
 </document>
