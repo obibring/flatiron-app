@@ -351,6 +351,13 @@
     }
 }
 
+-(void)reloadData {
+    for (NSString *key in calendars) {
+        [calendars[key] reloadData];
+    }
+}
+
+
 /**
  *  Controls what gets displayed in each cell
  *  Edit this function for customized calendar logic

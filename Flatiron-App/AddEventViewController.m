@@ -100,6 +100,7 @@
 }
 
 - (IBAction)save:(id)sender {
+    [self.view endEditing:YES];
     PFObject *event = [PFObject objectWithClassName:@"Event"];
     event[@"startDate"] = self.startDatePicker.date;
     event[@"title"] = self.titleInput.text;

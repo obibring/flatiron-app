@@ -66,6 +66,7 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         NSLog(@"RETRIEVED EVENTS FROM PARSE: %@", objects);
         self.calendar.events = objects;
+        self.events = [NSMutableArray arrayWithArray:objects];
         [self setEventsHashedByStartDateUsingEvents:objects];
 //        [self.tableView reloadData];
     }];
@@ -106,15 +107,18 @@
 -(void)setEventsHashedByStartDateUsingEvents:(NSArray *)events {
     [self.eventsHashedByStartDate removeAllObjects];
     for (PFObject *event in events) {
-        
-        // Get the has key for this event using its start date
-        NSString *key = [self hashKeyForEvent:event];
-        
-        if (self.eventsHashedByStartDate[key]) {
-            [((NSMutableArray *)self.eventsHashedByStartDate[key]) addObject:event];
-        } else {
-            self.eventsHashedByStartDate[key] = [NSMutableArray arrayWithObjects:event, nil];
-        }
+        [self addEventHashedByStartDate:event];
+    }
+}
+
+-(void)addEventHashedByStartDate:(PFObject *)event {
+    // Get the has key for this event using its start date
+    NSString *key = [self hashKeyForEvent:event];
+    
+    if (self.eventsHashedByStartDate[key]) {
+        [((NSMutableArray *)self.eventsHashedByStartDate[key]) addObject:event];
+    } else {
+        self.eventsHashedByStartDate[key] = [NSMutableArray arrayWithObjects:event, nil];
     }
 }
 
@@ -141,7 +145,11 @@
 #pragma mark - AddEventDelegate
 
 -(void)addEventViewController:(id)addEventViewController didSaveEvent:(PFObject *)event{
-    
+    // Add the event
+    [self.events addObject:event];
+    [self addEventHashedByStartDate:event];
+    [self dismissViewControllerAnimated:addEventViewController completion:nil];
+    self.calendar.events = (NSArray *)self.events;
 }
 
 -(void)addEventViewControllerDidCancel:(id)addEventViewController {

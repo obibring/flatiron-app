@@ -16,6 +16,8 @@
 @property (nonatomic, weak) id<SACalendarDelegate> delegate;
 @property (nonatomic, strong) NSArray *events;
 
+-(void)reloadData;
+
 /**
  *  Default constructor. Calendar will begin at current month
  *

@@ -26,6 +26,11 @@
     self.users = [[self getAllUsers] mutableCopy];
 }
 
+-(void)viewDidAppear:(BOOL)animated {
+    self.users = [[self getAllUsers] mutableCopy];
+    [self.tableView reloadData];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -54,6 +59,7 @@
     EveryoneTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"basicCell" forIndexPath:indexPath];
     PFUser *user = self.users[indexPath.row];
     cell.fullName.text = [self getFullNameOf:user];
+    cell.program.text = user[@"program"];
     cell.profileThumbnail.image = [self getProfileImageOfUser:user];
     cell.profileThumbnail.layer.cornerRadius = cell.profileThumbnail.frame.size.width / 2;
     cell.profileThumbnail.clipsToBounds = YES;

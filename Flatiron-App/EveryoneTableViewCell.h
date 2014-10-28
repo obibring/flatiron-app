@@ -11,5 +11,6 @@
 @interface EveryoneTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *profileThumbnail;
 @property (weak, nonatomic) IBOutlet UILabel *fullName;
+@property (weak, nonatomic) IBOutlet UILabel *program;
 
 @end
