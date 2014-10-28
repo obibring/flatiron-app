@@ -72,7 +72,7 @@
     NSString *firstName = user[@"firstName"];
     NSString *lastName = user[@"lastName"];
     if (firstName && lastName)
-        fullName = [fullName stringByAppendingString:user[@"lastName"]];
+        fullName = [firstName stringByAppendingString:[NSString stringWithFormat:@" %@", user[@"lastName"]]];
     else if (firstName)
         fullName = firstName;
     else if (lastName)

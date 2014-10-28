@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 #import "OnboardingViewController.h"
 #import "Constants.h"
+#import <FAKFontAwesome.h>
 
 @interface AppDelegate ()
 
@@ -73,7 +74,22 @@
 }
 
 -(UIViewController *)firstLoggedInViewController {
-   return [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"tabBarViewController"];
+    UITabBarController *tabCtrl = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"tabBarViewController"];
+    
+//    tabCtrl.tabBar.backgroundColor = flatironBlueDark;
+    tabCtrl.tabBar.tintColor = flatironBlueDark;
+    
+    // Set up the tab bar icons
+    FAKFontAwesome *usersIcon = [FAKFontAwesome usersIconWithSize:20];
+    ((UIViewController *)tabCtrl.viewControllers[0]).tabBarItem.image = [usersIcon imageWithSize:CGSizeMake(20, 20)];
+    
+    FAKFontAwesome *calendarIcon = [FAKFontAwesome calendarIconWithSize:20];
+    ((UIViewController *)tabCtrl.viewControllers[1]).tabBarItem.image = [calendarIcon imageWithSize:CGSizeMake(20, 20)];
+
+    FAKFontAwesome *userIcon = [FAKFontAwesome userIconWithSize:20];
+    ((UIViewController *)tabCtrl.viewControllers[2]).tabBarItem.image = [userIcon imageWithSize:CGSizeMake(20, 20)];
+    
+    return tabCtrl;
 }
 
 -(void)didLogin:(NSNotification *)notification {

@@ -213,7 +213,11 @@
             NSData * imageData = [theImage getData];
             UIImage *img = [UIImage imageWithData:imageData];
             [self.photo setBackgroundImage:img forState:UIControlStateNormal];
+            //Rounded settings. BOOL activates/deactivates.
+            self.photo.layer.cornerRadius = self.photo.frame.size.width / 15;
+            self.photo.clipsToBounds = YES;
             self.photo.imageView.image = img;
+            
         }
     }];
 }

@@ -4,7 +4,7 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
 target "Flatiron-App" do
-
+    pod 'FontAwesomeKit', '~> 2.1.0'
     pod 'Parse'
     pod 'PromiseKit'
 end

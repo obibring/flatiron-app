@@ -11,6 +11,7 @@
 #import "SACalendar.h"
 #import "Constants.h"
 #import <Parse/Parse.h>
+#import <FAKFontAwesome.h>
 
 @interface CalendarViewController () <SACalendarDelegate>
 @property (weak, nonatomic) IBOutlet UIView *calendarContainerView;
@@ -42,6 +43,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+   
     
     self.addEventButton.tintColor = flatironBlueDark;
     
