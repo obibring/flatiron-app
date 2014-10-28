@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MeViewController : UIViewController <UITextFieldDelegate>
+@interface MeViewController : UIViewController <UITextFieldDelegate, UIImagePickerControllerDelegate>
 
 @end

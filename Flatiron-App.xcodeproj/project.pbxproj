@@ -26,6 +26,7 @@
 		A3909D5319FD9C5800C640E2 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3909D5219FD9C5800C640E2 /* LoginViewController.m */; };
 		A3909D5519FD9D0700C640E2 /* flatiron-logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A3909D5419FD9D0700C640E2 /* flatiron-logo.jpg */; };
 		A3C3A08D19FF093500676BDA /* EventCalendarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A3C3A08C19FF093500676BDA /* EventCalendarCell.m */; };
+		A3C3A08F19FF14F500676BDA /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = A3C3A08E19FF14F500676BDA /* avatar.png */; };
 		B4820A4E0261E8D463ECB1B9 /* libPods-Flatiron-App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 542557DF3D518B20213FD004 /* libPods-Flatiron-App.a */; };
 		CB312F4219FC26CD009EFEA9 /* Steve-Carell-Brick-Tamland-Anchorman.png in Resources */ = {isa = PBXBuildFile; fileRef = CB312F4119FC26CD009EFEA9 /* Steve-Carell-Brick-Tamland-Anchorman.png */; };
 		CB312F4419FC3A24009EFEA9 /* edit.png in Resources */ = {isa = PBXBuildFile; fileRef = CB312F4319FC3A24009EFEA9 /* edit.png */; };
@@ -96,6 +97,7 @@
 		A3909D5419FD9D0700C640E2 /* flatiron-logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "flatiron-logo.jpg"; sourceTree = "<group>"; };
 		A3C3A08B19FF092F00676BDA /* EventCalendarCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventCalendarCell.h; sourceTree = "<group>"; };
 		A3C3A08C19FF093500676BDA /* EventCalendarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventCalendarCell.m; sourceTree = "<group>"; };
+		A3C3A08E19FF14F500676BDA /* avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar.png; sourceTree = "<group>"; };
 		CB312F4119FC26CD009EFEA9 /* Steve-Carell-Brick-Tamland-Anchorman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Steve-Carell-Brick-Tamland-Anchorman.png"; sourceTree = "<group>"; };
 		CB312F4319FC3A24009EFEA9 /* edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit.png; sourceTree = "<group>"; };
 		CB312F4719FC4157009EFEA9 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 		CB312F8919FD6700009EFEA9 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				A3C3A08E19FF14F500676BDA /* avatar.png */,
 				A3909D5419FD9D0700C640E2 /* flatiron-logo.jpg */,
 				CB312F8A19FD674D009EFEA9 /* facebook.png */,
 				CB312F8B19FD674D009EFEA9 /* github.png */,
@@ -396,6 +399,7 @@
 				CB312FB219FD95A3009EFEA9 /* githubGray.png in Resources */,
 				CB312FAD19FD91B2009EFEA9 /* twitterGray.png in Resources */,
 				CB312F6319FC5ECA009EFEA9 /* professional-profiles.png in Resources */,
+				A3C3A08F19FF14F500676BDA /* avatar.png in Resources */,
 				A3909D5519FD9D0700C640E2 /* flatiron-logo.jpg in Resources */,
 				A31A079219FC023700017DA9 /* Images.xcassets in Resources */,
 				CB312F9219FD674D009EFEA9 /* linkedin.png in Resources */,
