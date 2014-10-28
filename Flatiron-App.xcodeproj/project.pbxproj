@@ -42,6 +42,9 @@
 		CB312FB219FD95A3009EFEA9 /* githubGray.png in Resources */ = {isa = PBXBuildFile; fileRef = CB312FAF19FD95A3009EFEA9 /* githubGray.png */; };
 		CB312FB319FD95A3009EFEA9 /* linkedinGray.png in Resources */ = {isa = PBXBuildFile; fileRef = CB312FB019FD95A3009EFEA9 /* linkedinGray.png */; };
 		CB46ECE319FEF9410017CC83 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB46ECE219FEF9410017CC83 /* MeViewController.m */; };
+		CB46ECE519FF27810017CC83 /* backIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CB46ECE419FF27810017CC83 /* backIcon.png */; };
+		CB46ECEB19FF2B150017CC83 /* backButtonIos.png in Resources */ = {isa = PBXBuildFile; fileRef = CB46ECEA19FF2B150017CC83 /* backButtonIos.png */; };
+		CB46ECEE19FF2EA90017CC83 /* EveryoneTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB46ECED19FF2EA90017CC83 /* EveryoneTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +115,10 @@
 		CB312FB019FD95A3009EFEA9 /* linkedinGray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = linkedinGray.png; sourceTree = "<group>"; };
 		CB46ECE119FEF9410017CC83 /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
 		CB46ECE219FEF9410017CC83 /* MeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeViewController.m; sourceTree = "<group>"; };
+		CB46ECE419FF27810017CC83 /* backIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backIcon.png; sourceTree = "<group>"; };
+		CB46ECEA19FF2B150017CC83 /* backButtonIos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backButtonIos.png; sourceTree = "<group>"; };
+		CB46ECEC19FF2EA90017CC83 /* EveryoneTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EveryoneTableViewCell.h; sourceTree = "<group>"; };
+		CB46ECED19FF2EA90017CC83 /* EveryoneTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EveryoneTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +242,8 @@
 				A3909D5219FD9C5800C640E2 /* LoginViewController.m */,
 				CB46ECE119FEF9410017CC83 /* MeViewController.h */,
 				CB46ECE219FEF9410017CC83 /* MeViewController.m */,
+				CB46ECEC19FF2EA90017CC83 /* EveryoneTableViewCell.h */,
+				CB46ECED19FF2EA90017CC83 /* EveryoneTableViewCell.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -287,6 +296,8 @@
 		CB312F8919FD6700009EFEA9 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				CB46ECE419FF27810017CC83 /* backIcon.png */,
+				CB46ECEA19FF2B150017CC83 /* backButtonIos.png */,
 				A3909D5419FD9D0700C640E2 /* flatiron-logo.jpg */,
 				CB312F8A19FD674D009EFEA9 /* facebook.png */,
 				CB312F8B19FD674D009EFEA9 /* github.png */,
@@ -383,6 +394,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB46ECEB19FF2B150017CC83 /* backButtonIos.png in Resources */,
 				CB312F4219FC26CD009EFEA9 /* Steve-Carell-Brick-Tamland-Anchorman.png in Resources */,
 				CB312FB119FD95A3009EFEA9 /* facebookGray.png in Resources */,
 				CB312F9319FD674D009EFEA9 /* twitter.png in Resources */,
@@ -393,6 +405,7 @@
 				CB312F9119FD674D009EFEA9 /* google_plus.png in Resources */,
 				A31A079519FC023700017DA9 /* LaunchScreen.xib in Resources */,
 				CB312FB319FD95A3009EFEA9 /* linkedinGray.png in Resources */,
+				CB46ECE519FF27810017CC83 /* backIcon.png in Resources */,
 				CB312FB219FD95A3009EFEA9 /* githubGray.png in Resources */,
 				CB312FAD19FD91B2009EFEA9 /* twitterGray.png in Resources */,
 				CB312F6319FC5ECA009EFEA9 /* professional-profiles.png in Resources */,
@@ -460,6 +473,7 @@
 				A31A078719FC023700017DA9 /* main.m in Sources */,
 				CB46ECE319FEF9410017CC83 /* MeViewController.m in Sources */,
 				A3C3A08D19FF093500676BDA /* EventCalendarCell.m in Sources */,
+				CB46ECEE19FF2EA90017CC83 /* EveryoneTableViewCell.m in Sources */,
 				A31A07B319FC0DE800017DA9 /* CalendarViewController.m in Sources */,
 				A3909D5319FD9C5800C640E2 /* LoginViewController.m in Sources */,
 				A31A07B619FC0EB300017DA9 /* AlertsTableTableViewController.m in Sources */,

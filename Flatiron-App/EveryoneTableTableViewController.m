@@ -8,11 +8,13 @@
 
 #import "EveryoneTableTableViewController.h"
 #import "ProfileViewController.h"
+#import "EveryoneTableViewCell.h"
 #import <Parse/Parse.h>
 
 @interface EveryoneTableTableViewController ()
 
-@property (strong, nonatomic) NSArray *users;
+@property (strong, nonatomic) NSMutableArray *users;
+@property (strong, nonatomic) NSArray *searchResults;
 
 @end
 
@@ -20,13 +22,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.users = [self getAllUsers];
+    self.users = [[NSMutableArray alloc] init];
+    self.users = [[self getAllUsers] mutableCopy];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+//#pragma mark - Search methods
+//
+//- (void) searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+//    self.users = [[self filterWith:searchText] mutableCopy];
+//    [self.tableView reloadData];
+//}
 
 #pragma mark - Table view data source
 
@@ -41,10 +51,20 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"basicCell" forIndexPath:indexPath];
+    EveryoneTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"basicCell" forIndexPath:indexPath];
     PFUser *user = self.users[indexPath.row];
-    cell.textLabel.text = [self getFullNameOf:user];
+    cell.fullName.text = [self getFullNameOf:user];
+    cell.profileThumbnail.image = [self getProfileImageOfUser:user];
+    cell.profileThumbnail.layer.cornerRadius = cell.profileThumbnail.frame.size.width / 2;
+    cell.profileThumbnail.clipsToBounds = YES;
     return cell;
+}
+
+- (UIImage *) getProfileImageOfUser:(PFUser *)user {
+    PFFile *profileImageFile = user[@"profileImage"];
+    NSData *imageData = [profileImageFile getData];
+    UIImage *profileImage = [UIImage imageWithData:imageData];
+    return profileImage;
 }
 
 - (NSString *) getFullNameOf:(PFUser *)user {
@@ -58,11 +78,19 @@
     [query orderByDescending:@"lastName"]; //We are getting the query in alphabetical order (last name)
     return [query findObjects];
 }
-- (NSArray *) getUsersOfType:(NSString *)type {
-    PFQuery *query = [PFUser query];
-    [query whereKey:@"program" containsString:type];
-    return [query findObjects];
-}
+//- (NSArray *) filterWith:(NSString *)keyword {
+//    PFQuery *first = [PFUser query];
+//    [first whereKey:@"firstName" containsString:keyword];
+//    
+//    PFQuery *last = [PFUser query];
+//    [last whereKey:@"lastName" containsString:keyword];
+//    
+//    PFQuery *combined = [PFQuery orQueryWithSubqueries:@[first, last]];
+//    
+//    NSLog(@"%@",[combined findObjects]);
+//
+//    return [combined findObjects];
+//}
 
 
 #pragma mark - Navigation

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EveryoneTableTableViewController : UITableViewController
+@interface EveryoneTableTableViewController : UITableViewController// <UISearchBarDelegate, UISearchControllerDelegate>
 
 @end

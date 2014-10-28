@@ -23,12 +23,16 @@
 //Bio
 @property (weak, nonatomic) IBOutlet UILabel *before;
 @property (weak, nonatomic) IBOutlet UILabel *after;
-@property (weak, nonatomic) IBOutlet UILabel *fun;
 //Social buttons tapped
 - (IBAction)gitHubButtonTapped:(id)sender;
 - (IBAction)facebookButtonTapped:(id)sender;
 - (IBAction)twitterButtonTapped:(id)sender;
 - (IBAction)linkedInButtonTapped:(id)sender;
+//Navigation
+- (IBAction)backButtonTapped:(id)sender;
+
+//Test
+@property (weak, nonatomic) IBOutlet UITextField *testField;
 
 @end
 
@@ -50,9 +54,8 @@
     [self getProfileImageRounded:YES border:YES];
     self.name.text = self.title; //The title of the view was set to the full name;
     self.program.text = self.user[@"program"];
-    self.before.text = self.user[@"beforeBio"];
-    self.after.text = self.user[@"afterBio"];
-    self.fun.text = self.user[@"funFact"];
+    self.before.text = self.user[@"beforeFlatiron"];
+    self.after.text = self.user[@"afterFlatiron"];
     self.email.text = self.user.email;
     
 }
@@ -134,5 +137,9 @@
 
 - (IBAction)linkedInButtonTapped:(id)sender {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.user[@"linkedInURL"]]];
+}
+
+- (IBAction)backButtonTapped:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end
