@@ -812,9 +812,9 @@
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pgY-Mh-5IH">
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pgY-Mh-5IH">
                                                 <rect key="frame" x="8" y="27" width="120" height="120"/>
-                                                <state key="normal" backgroundImage="avatar.png">
+                                                <state key="normal" backgroundImage="avatar120.png">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -948,11 +948,11 @@
                 </view>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9GR-yz-OlU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-145" y="-424"/>
+            <point key="canvasLocation" x="-143" y="-424"/>
         </scene>
     </scenes>
     <resources>
-        <image name="avatar.png" width="170" height="170"/>
+        <image name="avatar120.png" width="60" height="60"/>
         <image name="backButtonIos.png" width="48" height="80"/>
         <image name="facebookGray.png" width="64" height="64"/>
         <image name="githubGray.png" width="64" height="64"/>

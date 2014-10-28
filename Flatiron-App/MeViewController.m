@@ -76,10 +76,16 @@
             self.studentTypeSegment.selectedSegmentIndex = 0;
         } else if ([self.me[@"studentType"] isEqualToString:@"Ruby"]) {
             self.studentTypeSegment.selectedSegmentIndex = 1;
+        } else {
+            self.studentTypeSegment.selectedSegmentIndex = -1;
         }
     } else if ([self.me[@"isStudent"] isEqualToNumber:@0]) {
         self.isStudentSegment.selectedSegmentIndex = 1;
+        self.studentTypeSegment.selectedSegmentIndex = -1;
         self.studentTypeSegment.enabled = NO;
+    } else {
+        self.isStudentSegment.selectedSegmentIndex = -1;
+        self.studentTypeSegment.selectedSegmentIndex = -1;
     }
     
     self.firstName.delegate = self;
