@@ -55,11 +55,33 @@
     return [self.users count];
 }
 
+-(NSString *)getProgramText:(PFUser *)user {
+    NSNumber *isStudent = user[@"isStudent"];
+    NSString *cohort = user[@"cohortNumber"];
+    NSString *studenType;
+    if ([isStudent integerValue] == 1) {
+        studenType = user[@"studentType"];
+    }
+   
+    if ([isStudent isEqualToNumber:@1]) {
+        if (user[@"studentType"]) {
+            if (cohort) {
+                return [NSString stringWithFormat:@"%@ %@", studenType, cohort];
+            } else {
+                return studenType;
+            }
+        }
+    } else if ([isStudent isEqualToNumber:@0]) {
+       return @"Faculty";
+    }
+    return @"";
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     EveryoneTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"basicCell" forIndexPath:indexPath];
     PFUser *user = self.users[indexPath.row];
     cell.fullName.text = [self getFullNameOf:user];
-    cell.program.text = user[@"program"];
+    cell.program.text = [self getProgramText:user];
     cell.profileThumbnail.image = [self getProfileImageOfUser:user];
     cell.profileThumbnail.layer.cornerRadius = cell.profileThumbnail.frame.size.width / 2;
     cell.profileThumbnail.clipsToBounds = YES;

@@ -648,7 +648,7 @@
                                                             <constraint firstAttribute="height" constant="30" id="8Na-Di-hDA"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.93222513686131392" alpha="1" colorSpace="calibratedWhite"/>
@@ -685,7 +685,7 @@
                                                     <constraint firstAttribute="height" constant="30" id="xlb-VE-t2U"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mobile" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vbM-LG-SFg">
                                                 <rect key="frame" x="8" y="238" width="198" height="30"/>
@@ -804,13 +804,13 @@
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Flatiron Class" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="RVc-0W-0pD">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Class &quot;Year&quot; ie: 006" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="RVc-0W-0pD">
                                                 <rect key="frame" x="216" y="238" width="190" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="izK-Og-qah"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pgY-Mh-5IH">
                                                 <rect key="frame" x="8" y="27" width="120" height="120"/>
@@ -838,6 +838,9 @@
                                                     <segment title="Faculty"/>
                                                 </segments>
                                                 <color key="tintColor" red="0.58431372549019611" green="0.76470588235294112" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
+                                                <connections>
+                                                    <action selector="selectUserType:" destination="DQK-Bm-cNU" eventType="valueChanged" id="1dT-WP-t0H"/>
+                                                </connections>
                                             </segmentedControl>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="F4T-60-O1d">
                                                 <rect key="frame" x="216" y="197" width="190" height="29"/>
@@ -846,6 +849,9 @@
                                                     <segment title="Ruby"/>
                                                 </segments>
                                                 <color key="tintColor" red="0.58431372550000005" green="0.76470588240000004" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                <connections>
+                                                    <action selector="selectStudentType:" destination="DQK-Bm-cNU" eventType="valueChanged" id="qeB-BH-2uX"/>
+                                                </connections>
                                             </segmentedControl>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Contact" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eku-nu-B3w">
                                                 <rect key="frame" x="136" y="27" width="270" height="25"/>
@@ -889,19 +895,21 @@
                     <connections>
                         <outlet property="afterFlatiron" destination="9le-qj-fVd" id="Cj5-go-AgH"/>
                         <outlet property="beforeFlatiron" destination="mhD-At-cc7" id="iUs-9m-lLZ"/>
+                        <outlet property="cohortNumber" destination="RVc-0W-0pD" id="mvu-da-odC"/>
                         <outlet property="email" destination="7H2-uq-PcU" id="pAL-Ly-u0U"/>
                         <outlet property="facebookButton" destination="mQY-yY-CR1" id="8bO-t0-dsb"/>
                         <outlet property="facebookHandle" destination="0fw-M2-Vks" id="Ap5-tH-k5D"/>
                         <outlet property="firstName" destination="xWF-cO-iWS" id="KP1-64-2pN"/>
                         <outlet property="gitHubButton" destination="uVm-vg-goX" id="8ga-d0-zUQ"/>
                         <outlet property="gitHubHandle" destination="AnF-S6-cBa" id="Imq-Z8-JEu"/>
+                        <outlet property="isStudentSegment" destination="GfU-gO-gLx" id="aLh-9u-YdB"/>
                         <outlet property="lastName" destination="dcm-rH-2CA" id="H8e-IG-DGG"/>
                         <outlet property="linkedInButton" destination="Pt1-Q7-2S4" id="tQC-Vl-GtR"/>
                         <outlet property="linkedInURL" destination="t6O-JE-96I" id="OYl-zC-V2G"/>
                         <outlet property="mobile" destination="vbM-LG-SFg" id="Zw2-f5-dgw"/>
                         <outlet property="photo" destination="pgY-Mh-5IH" id="dKK-Od-CJK"/>
-                        <outlet property="program" destination="RVc-0W-0pD" id="3tF-SH-vfE"/>
                         <outlet property="scrollView" destination="0P6-Uj-5FR" id="Kca-N6-XF6"/>
+                        <outlet property="studentTypeSegment" destination="F4T-60-O1d" id="3Jk-Zg-kOG"/>
                         <outlet property="twitterButton" destination="BSS-5R-Pd3" id="8cv-Pe-FaB"/>
                         <outlet property="twitterHandle" destination="ynr-vC-pWo" id="gEX-pG-k5K"/>
                     </connections>

@@ -19,11 +19,13 @@
 @property (weak, nonatomic) IBOutlet UITextField *firstName;
 @property (weak, nonatomic) IBOutlet UITextField *lastName;
 @property (weak, nonatomic) IBOutlet UITextField *email;
-@property (weak, nonatomic) IBOutlet UITextField *program;
+@property (weak, nonatomic) IBOutlet UITextField *cohortNumber;
 @property (weak, nonatomic) IBOutlet UITextField *mobile;
 @property (weak, nonatomic) IBOutlet UIButton *photo;
 @property (weak, nonatomic) IBOutlet UITextView *beforeFlatiron;
 @property (weak, nonatomic) IBOutlet UITextView *afterFlatiron;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *isStudentSegment;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *studentTypeSegment;
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
@@ -59,7 +61,7 @@
     self.firstName.text = self.me[@"firstName"];
     self.lastName.text = self.me[@"lastName"];
     self.email.text = self.me.email;
-    self.program.text = self.me[@"program"];
+    self.cohortNumber.text = self.me[@"cohortNumber"];
     self.mobile.text = self.me[@"mobile"];
     self.gitHubHandle.text = self.me[@"gitHubHandle"];
     self.facebookHandle.text = self.me[@"facebookHandle"];
@@ -68,10 +70,22 @@
     self.beforeFlatiron.text = self.me[@"beforeFlatiron"];
     self.afterFlatiron.text = self.me[@"afterFlatiron"];
     
+    if ([self.me[@"isStudent"] isEqualToNumber:@1]) {
+        self.isStudentSegment.selectedSegmentIndex = 0;
+        if ([self.me[@"studentType"] isEqualToString:@"iOS"]) {
+            self.studentTypeSegment.selectedSegmentIndex = 0;
+        } else if ([self.me[@"studentType"] isEqualToString:@"Ruby"]) {
+            self.studentTypeSegment.selectedSegmentIndex = 1;
+        }
+    } else if ([self.me[@"isStudent"] isEqualToNumber:@0]) {
+        self.isStudentSegment.selectedSegmentIndex = 1;
+        self.studentTypeSegment.enabled = NO;
+    }
+    
     self.firstName.delegate = self;
     self.lastName.delegate = self;
     self.email.delegate = self;
-    self.program.delegate = self;
+    self.cohortNumber.delegate = self;
     self.mobile.delegate = self;
     self.gitHubHandle.delegate = self;
     self.facebookHandle.delegate = self;
@@ -79,7 +93,6 @@
     self.linkedInURL.delegate = self;
     self.beforeFlatiron.delegate = self;
     self.afterFlatiron.delegate = self;
-    
    
     if (!self.me[@"beforeFlatiron"]) {
         self.beforeFlatiron.text = beforeFlatironDefaultText;
@@ -92,6 +105,39 @@
     }
     
     [self activateSocialIcons];
+}
+
+- (IBAction)selectUserType:(id)sender {
+    [self.view endEditing:YES];
+    if (self.isStudentSegment.selectedSegmentIndex == 0) {
+       // User is student
+        self.me[@"isStudent"] = @1;
+        self.studentTypeSegment.enabled = YES;
+        self.studentTypeSegment.selectedSegmentIndex = -1;
+        self.cohortNumber.enabled = YES;
+    } else if (self.isStudentSegment.selectedSegmentIndex == 1) {
+        self.me[@"isStudent"] = @0;
+        self.studentTypeSegment.enabled = NO;
+        self.studentTypeSegment.selectedSegmentIndex = -1;
+        self.cohortNumber.enabled = NO;
+        self.cohortNumber.text = @"";
+        [self.me removeObjectForKey:@"studentType"];
+        [self.me removeObjectForKey:@"cohortNumber"];
+    }
+    [self.me saveInBackground];
+}
+
+- (IBAction)selectStudentType:(id)sender {
+    [self.view endEditing:YES];
+    NSInteger iosIndex = 0;
+    if (self.studentTypeSegment.selectedSegmentIndex == iosIndex) {
+       self.me[@"studentType"] = @"iOS";
+    } else if (self.studentTypeSegment.selectedSegmentIndex == iosIndex + 1){
+       self.me[@"studentType"] = @"Ruby";
+    } else {
+        [self.me removeObjectForKey:@"studentType"];
+    }
+    [self.me saveInBackground];
 }
 
 - (BOOL) textViewShouldBeginEditing:(UITextView *)textView {
@@ -158,14 +204,17 @@
             self.me[@"lastName"] = self.lastName.text;
         else
             [self.me removeObjectForKey:@"lastName"];
-    } else if (textField == self.email) {
-//        if ([value length] > 0)
-//            self.me.email = self.email.text;
-    } else if (textField == self.program) {
-        if ([value length] > 0)
-            self.me[@"program"] = self.program.text;
+    } else if (textField == self.cohortNumber) {
+        if ([value length] > 0) {
+            NSInteger year = [value integerValue];
+            if (year > -1) {
+                NSString *displayNumber = [NSString stringWithFormat:@"%.3li",(long)year];
+                self.me[@"cohortNumber"] = displayNumber;
+                self.cohortNumber.text = displayNumber;
+            }
+        }
         else
-            [self.me removeObjectForKey:@"email"];
+            [self.me removeObjectForKey:@"cohortNumber"];
     } else if (textField == self.mobile) {
         if ([value length] > 0)
             self.me[@"mobile"] = self.mobile.text;
@@ -271,8 +320,8 @@
         self.me[@"firstName"] = self.firstName.text;
     } else if (textField == self.lastName) {
         self.me[@"lastName"] = self.lastName.text;
-    } else if (textField == self.program) {
-        self.me[@"program"] = self.program.text;
+    } else if (textField == self.cohortNumber) {
+        self.me[@"cohortNumber"] = self.cohortNumber.text;
     } else if (textField == self.mobile) {
         self.me[@"mobileNumber"] = self.mobile.text;
     }
