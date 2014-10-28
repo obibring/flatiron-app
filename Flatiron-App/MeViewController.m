@@ -8,10 +8,13 @@
 
 #import "MeViewController.h"
 #import <Parse/Parse.h>
+#define beforeFlatironDefaultText @"What were you doing before this?"
+#define afterFlatironDefaultText @"Plans after?"
 
 @interface MeViewController ()
 
 @property (strong, nonatomic) PFUser *me;
+@property (strong, nonatomic) PFUser *user;
 //Contact info
 @property (weak, nonatomic) IBOutlet UITextField *firstName;
 @property (weak, nonatomic) IBOutlet UITextField *lastName;
@@ -19,6 +22,10 @@
 @property (weak, nonatomic) IBOutlet UITextField *program;
 @property (weak, nonatomic) IBOutlet UITextField *mobile;
 @property (weak, nonatomic) IBOutlet UIButton *photo;
+@property (weak, nonatomic) IBOutlet UITextView *beforeFlatiron;
+@property (weak, nonatomic) IBOutlet UITextView *afterFlatiron;
+
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 //Social
 @property (weak, nonatomic) IBOutlet UITextField *gitHubHandle;
@@ -35,20 +42,31 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self resetSocialIcons];
     self.me = [PFUser currentUser];
     
     // Download user's photo and save it
     [self downloadUserPhoto];
     
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    
+    [self.view addGestureRecognizer:tap];
+    
+    self.scrollView.contentSize = [UIScreen mainScreen].bounds.size;
+    
     self.firstName.text = self.me[@"firstName"];
     self.lastName.text = self.me[@"lastName"];
-    self.email.text = self.me[@"email"];
+    self.email.text = self.me.email;
     self.program.text = self.me[@"program"];
     self.mobile.text = self.me[@"mobile"];
     self.gitHubHandle.text = self.me[@"gitHubHandle"];
     self.facebookHandle.text = self.me[@"facebookHandle"];
     self.twitterHandle.text = self.me[@"twitterHandle"];
     self.linkedInURL.text = self.me[@"linkedInURL"];
+    self.beforeFlatiron.text = self.me[@"beforeFlatiron"];
+    self.afterFlatiron.text = self.me[@"afterFlatiron"];
     
     self.firstName.delegate = self;
     self.lastName.delegate = self;
@@ -59,28 +77,123 @@
     self.facebookHandle.delegate = self;
     self.twitterHandle.delegate = self;
     self.linkedInURL.delegate = self;
+    self.beforeFlatiron.delegate = self;
+    self.afterFlatiron.delegate = self;
+    
+   
+    if (!self.me[@"beforeFlatiron"]) {
+        self.beforeFlatiron.text = beforeFlatironDefaultText;
+        self.beforeFlatiron.textColor = [UIColor grayColor];
+    }
+    
+    if (!self.me[@"afterFlatiron"]) {
+        self.afterFlatiron.text = afterFlatironDefaultText;
+        self.afterFlatiron.textColor = [UIColor grayColor];
+    }
+    
+    [self activateSocialIcons];
+}
+
+- (BOOL) textViewShouldBeginEditing:(UITextView *)textView {
+    if (textView == self.beforeFlatiron && [textView.text isEqualToString: beforeFlatironDefaultText]) {
+        textView.text = @"";
+        textView.textColor = [UIColor blackColor];
+    }
+    if (textView == self.afterFlatiron && [textView.text isEqualToString:afterFlatironDefaultText]) {
+        textView.text = @"";
+        textView.textColor = [UIColor blackColor];
+    }
+    return YES;
+}
+
+-(void)textViewDidEndEditing:(UITextView *)textView {
+    NSString *value = textView.text;
+    
+    if (value.length) {
+        if (textView == self.beforeFlatiron) {
+            if ([value length] > 0 && ![value isEqualToString:beforeFlatironDefaultText])
+                self.me[@"beforeFlatiron"] = self.beforeFlatiron.text;
+            else
+                [self.me removeObjectForKey:@"beforeFlatiron"];
+            
+        } else if (textView == self.afterFlatiron) {
+            if ([value length] > 0 && ![value isEqualToString:afterFlatironDefaultText])
+                self.me[@"afterFlatiron"] = self.afterFlatiron.text;
+            else
+                [self.me removeObjectForKey:@"afterFlatiron"];
+        }
+        
+        [self.me saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (succeeded) {
+                NSLog(@"USER SAVED SUCCESSFULLY");
+            }
+        }];
+    } else {
+        textView.textColor = [UIColor lightGrayColor];
+        if (textView == self.beforeFlatiron) {
+            textView.text = beforeFlatironDefaultText;
+        } else if (textView == self.afterFlatiron) {
+            textView.text = afterFlatironDefaultText;
+        }
+    }
+}
+
+- (void) resetSocialIcons {
+    self.gitHubButton.enabled = NO;
+    self.facebookButton.enabled = NO;
+    self.twitterButton.enabled = NO;
+    self.linkedInButton.enabled = NO;
 }
 
 -(void)textFieldDidEndEditing:(UITextField *)textField {
-    if (textField == self.firstName)
-        self.me[@"firstName"] = self.firstName.text;
-    else if (textField == self.lastName)
-        self.me[@"lastName"] = self.lastName.text;
-    else if (textField == self.email)
-        self.me[@"email"] = self.email.text;
-    else if (textField == self.program)
-        self.me[@"program"] = self.program.text;
-    else if (textField == self.mobile)
-        self.me[@"mobile"] = self.mobile.text;
-    else if (textField == self.gitHubHandle)
-        self.me[@"gitHubHandle"] = self.gitHubHandle.text;
-    else if (textField == self.facebookHandle)
-        self.me[@"facebookHandle"] = self.facebookHandle.text;
-    else if (textField == self.twitterHandle)
-        self.me[@"twitterHandle"] = self.twitterHandle.text;
-    else if (textField == self.linkedInURL)
-        self.me[@"linkedInURL"] = self.linkedInURL.text;
+    NSString *value = textField.text;
     
+    if (textField == self.firstName) {
+        if ([value length] > 0)
+            self.me[@"firstName"] = self.firstName.text;
+        else
+            [self.me removeObjectForKey:@"firstName"];
+    } else if (textField == self.lastName) {
+        if ([value length] > 0)
+            self.me[@"lastName"] = self.lastName.text;
+        else
+            [self.me removeObjectForKey:@"lastName"];
+    } else if (textField == self.email) {
+//        if ([value length] > 0)
+//            self.me.email = self.email.text;
+    } else if (textField == self.program) {
+        if ([value length] > 0)
+            self.me[@"program"] = self.program.text;
+        else
+            [self.me removeObjectForKey:@"email"];
+    } else if (textField == self.mobile) {
+        if ([value length] > 0)
+            self.me[@"mobile"] = self.mobile.text;
+        else
+            [self.me removeObjectForKey:@"email"];
+    } else if (textField == self.gitHubHandle) {
+        if ([value length] > 0)
+            self.me[@"gitHubHandle"] = self.gitHubHandle.text;
+        else
+            [self.me removeObjectForKey:@"gitHubHandle"];
+    } else if (textField == self.facebookHandle) {
+        if ([value length] > 0)
+            self.me[@"facebookHandle"] = self.facebookHandle.text;
+        else
+            [self.me removeObjectForKey:@"facebookHandle"];
+    } else if (textField == self.twitterHandle) {
+        if ([value length] > 0)
+            self.me[@"twitterHandle"] = self.twitterHandle.text;
+        else
+            [self.me removeObjectForKey:@"twitterHandle"];
+    } else if (textField == self.linkedInURL) {
+        if ([value length] > 0)
+            self.me[@"linkedInURL"] = self.linkedInURL.text;
+        else
+            [self.me removeObjectForKey:@"linkedInURL"];
+    }
+    
+    [self activateSocialIcons];
     [self.me saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             NSLog(@"USER SAVED SUCCESSFULLY");
@@ -108,6 +221,44 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) activateSocialIcons {
+    if (self.me[@"gitHubHandle"]) {
+        UIImage *gitHubIcon = [UIImage imageNamed:@"github.png"];
+        [self.gitHubButton setImage:gitHubIcon forState:UIControlStateNormal];
+        self.gitHubButton.enabled = YES;
+    } else {
+        [self.gitHubButton setBackgroundImage:[UIImage imageNamed:@"githubGray"] forState:UIControlStateNormal];
+        self.gitHubButton.enabled = NO;
+    }
+    
+    if (self.me[@"facebookHandle"]) {
+        UIImage *facebookIcon = [UIImage imageNamed:@"facebook.png"];
+        [self.facebookButton setImage:facebookIcon forState:UIControlStateNormal];
+        self.facebookButton.enabled = YES;
+    } else {
+        [self.facebookButton setBackgroundImage:[UIImage imageNamed:@"facebookGray"] forState:UIControlStateNormal];
+        self.facebookButton.enabled = NO;
+    }
+    
+    if (self.me[@"twitterHandle"]) {
+        UIImage *twitterIcon = [UIImage imageNamed:@"twitter.png"];
+        [self.twitterButton setImage:twitterIcon forState:UIControlStateNormal];
+        self.twitterButton.enabled = YES;
+    } else {
+        [self.twitterButton setBackgroundImage:[UIImage imageNamed:@"twitterGray"] forState:UIControlStateNormal];
+        self.twitterButton.enabled = NO;
+    }
+    
+    if (self.me[@"linkedInURL"]) {
+        UIImage *linkedInIcon = [UIImage imageNamed:@"linkedin.png"];
+        [self.linkedInButton setImage:linkedInIcon forState:UIControlStateNormal];
+        self.linkedInButton.enabled = YES;
+    } else {
+        [self.linkedInButton setBackgroundImage:[UIImage imageNamed:@"linkedinGray"] forState:UIControlStateNormal];
+        self.linkedInButton.enabled = NO;
+    }
 }
 
 - (BOOL) textFieldShouldReturn:(UITextField *)textField {
@@ -138,7 +289,7 @@
     return YES;
 }
 
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+-(void)dismissKeyboard {
     [self.view endEditing:YES];
 }
 
@@ -158,15 +309,12 @@
     UIGraphicsEndImageContext();
     
     // Upload the image to parse
-    NSData *imageData = UIImageJPEGRepresentation(smallImage, 0.05f);
+    NSData *imageData = UIImageJPEGRepresentation(smallImage, 1.00f);
     [self uploadImage:imageData];
 }
 
 -(void)uploadImage:(NSData *)imageData {
-    PFUser *user = [PFUser currentUser];
     PFFile *imageFile = [PFFile fileWithName:@"Image.jpg" data:imageData];
-    
-    //HUD creation here (see example for code)
     
     // Save PFFile
     [imageFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
@@ -176,11 +324,12 @@
             // Create a PFObject around a PFFile and associate it with the current user
             PFObject *userPhoto = [PFObject objectWithClassName:@"UserPhoto"];
             [userPhoto setObject:imageFile forKey:@"profilePic"];
+            self.me[@"profileImage"] = imageFile;
             
             // Set the access control list to current user for security purposes
             userPhoto.ACL = [PFACL ACLWithUser:[PFUser currentUser]];
             
-            [userPhoto setObject:user forKey:@"user"];
+            [userPhoto setObject:self.me forKey:@"user"];
             
             [userPhoto saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                 if (!error) {
