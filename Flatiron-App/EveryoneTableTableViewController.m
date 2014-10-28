@@ -68,8 +68,17 @@
 }
 
 - (NSString *) getFullNameOf:(PFUser *)user {
-    NSString *fullName = [user[@"firstName"] stringByAppendingString:@" "];
-    fullName = [fullName stringByAppendingString:user[@"lastName"]];
+    NSString *fullName;
+    NSString *firstName = user[@"firstName"];
+    NSString *lastName = user[@"lastName"];
+    if (firstName && lastName)
+        fullName = [fullName stringByAppendingString:user[@"lastName"]];
+    else if (firstName)
+        fullName = firstName;
+    else if (lastName)
+        fullName = lastName;
+    else
+        fullName = @"";
     return fullName;
 }
 
